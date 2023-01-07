@@ -15,7 +15,8 @@
     "paths": {
         "/api/{establishmentId}/user/{userId}/userEstablishment/{userEstablishmentId}": {
             "get": {
-                "tags": ["user establishment"],
+                "tags": ["User Establishment"],
+                "summary": "Search for details of the user's relationship with the establishment",
                 "operationId": "findById",
                 "parameters": [{
                     "name": "establishmentId",
@@ -66,7 +67,8 @@
                 }
             },
             "put": {
-                "tags": ["user-establishment-controller"],
+                "tags": ["User Establishment"],
+                "summary": "Update user link with establishment",
                 "operationId": "update",
                 "parameters": [{
                     "name": "establishmentId",
@@ -117,7 +119,8 @@
                 }
             },
             "delete": {
-                "tags": ["user-establishment-controller"],
+                "tags": ["User Establishment"],
+                "summary": "Remove user link with establishment",
                 "operationId": "delete",
                 "parameters": [{
                     "name": "establishmentId",
@@ -153,7 +156,7 @@
         },
         "/api/user/{userId}/{establishmentId}/workDay/{workDayId}": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["Work Day"],
                 "operationId": "findByIdWorkDay",
                 "parameters": [{
                     "name": "userId",
@@ -194,7 +197,7 @@
                 }
             },
             "put": {
-                "tags": ["user-controller"],
+                "tags": ["Work Day"],
                 "operationId": "updateWorkDay",
                 "parameters": [{
                     "name": "userId",
@@ -245,7 +248,7 @@
                 }
             },
             "delete": {
-                "tags": ["user-controller"],
+                "tags": ["Work Day"],
                 "operationId": "deleteWorkDay",
                 "parameters": [{
                     "name": "userId",
@@ -281,7 +284,7 @@
         },
         "/api/user/{userId}/address/{addressId}": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["User Address"],
                 "operationId": "findByIdAddress",
                 "parameters": [{
                     "name": "userId",
@@ -314,7 +317,7 @@
                 }
             },
             "put": {
-                "tags": ["user-controller"],
+                "tags": ["User Address"],
                 "operationId": "updateAddress",
                 "parameters": [{
                     "name": "userId",
@@ -359,7 +362,7 @@
         },
         "/api/user/{establishmentId}/{userId}": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["User"],
                 "operationId": "findById_1",
                 "parameters": [{
                     "name": "establishmentId",
@@ -392,7 +395,7 @@
                 }
             },
             "put": {
-                "tags": ["user-controller"],
+                "tags": ["User"],
                 "operationId": "update_1",
                 "parameters": [{
                     "name": "establishmentId",
@@ -437,7 +440,7 @@
         },
         "/api/user/{establishmentId}/{userId}/password": {
             "put": {
-                "tags": ["user-controller"],
+                "tags": ["User"],
                 "operationId": "updateUserPassword",
                 "parameters": [{
                     "name": "establishmentId",
@@ -482,7 +485,7 @@
         },
         "/api/user/{establishmentId}/{userId}/lock/{userLockId}/unlock": {
             "put": {
-                "tags": ["user-lock-controller"],
+                "tags": ["User Lock"],
                 "operationId": "unlock",
                 "parameters": [{
                     "name": "userId",
@@ -525,7 +528,7 @@
         },
         "/api/service/{serviceId}/serviceValue/{serviceValueId}": {
             "get": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Value"],
                 "operationId": "findByIdServiceValue",
                 "parameters": [{
                     "name": "serviceId",
@@ -558,7 +561,7 @@
                 }
             },
             "put": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Value"],
                 "operationId": "updateServiceValue",
                 "parameters": [{
                     "name": "serviceId",
@@ -603,7 +606,7 @@
         },
         "/api/service/{serviceId}/serviceValue/{serviceValueId}/cancel": {
             "put": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Value"],
                 "operationId": "cancelServiceValue",
                 "parameters": [{
                     "name": "serviceId",
@@ -638,7 +641,7 @@
         },
         "/api/service/{serviceId}/serviceLink/{serviceLinkId}": {
             "get": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Link"],
                 "operationId": "findByIdServiceLink",
                 "parameters": [{
                     "name": "serviceId",
@@ -671,7 +674,7 @@
                 }
             },
             "put": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Link"],
                 "operationId": "updateServiceLink",
                 "parameters": [{
                     "name": "serviceId",
@@ -714,7 +717,7 @@
                 }
             },
             "delete": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Link"],
                 "operationId": "deleteServiceLink",
                 "parameters": [{
                     "name": "serviceId",
@@ -742,7 +745,7 @@
         },
         "/api/service/{establishmentId}/{serviceId}": {
             "get": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service"],
                 "operationId": "findById_3",
                 "parameters": [{
                     "name": "establishmentId",
@@ -775,7 +778,7 @@
                 }
             },
             "put": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service"],
                 "operationId": "update_2",
                 "parameters": [{
                     "name": "establishmentId",
@@ -820,7 +823,7 @@
         },
         "/api/service/{establishmentId}/{serviceId}/cancel": {
             "put": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service"],
                 "operationId": "cancelService",
                 "parameters": [{
                     "name": "establishmentId",
@@ -855,7 +858,7 @@
         },
         "/api/service/{establishmentId}/category/{categoryId}": {
             "get": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Category"],
                 "operationId": "findByIdCategory",
                 "parameters": [{
                     "name": "establishmentId",
@@ -888,7 +891,7 @@
                 }
             },
             "put": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Category"],
                 "operationId": "updateCategory",
                 "parameters": [{
                     "name": "establishmentId",
@@ -933,7 +936,7 @@
         },
         "/api/scheduling/{schedulingId}/service/{schedulingServiceId}": {
             "get": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling Service"],
                 "operationId": "findByIdService",
                 "parameters": [{
                     "name": "schedulingServiceId",
@@ -958,7 +961,7 @@
                 }
             },
             "put": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling Service"],
                 "operationId": "updateService",
                 "parameters": [{
                     "name": "schedulingId",
@@ -1003,7 +1006,7 @@
         },
         "/api/scheduling/{schedulingId}/service/cancel/{schedulingServiceId}": {
             "put": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling Service"],
                 "operationId": "cancelService_1",
                 "parameters": [{
                     "name": "schedulingId",
@@ -1038,7 +1041,7 @@
         },
         "/api/scheduling/{establishmentId}/{schedulingId}": {
             "get": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling"],
                 "operationId": "findById_4",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1071,7 +1074,7 @@
                 }
             },
             "put": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling"],
                 "operationId": "update_3",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1116,7 +1119,7 @@
         },
         "/api/scheduling/{establishmentId}/{schedulingId}/refuse": {
             "put": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling"],
                 "operationId": "refuseScheduled",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1151,7 +1154,7 @@
         },
         "/api/scheduling/{establishmentId}/{schedulingId}/confirm": {
             "put": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling"],
                 "operationId": "confirmScheduled",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1186,7 +1189,7 @@
         },
         "/api/scheduling/{establishmentId}/{schedulingId}/cancel": {
             "put": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling"],
                 "operationId": "cancelScheduled",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1221,7 +1224,7 @@
         },
         "/api/establishment/{establishmentId}": {
             "get": {
-                "tags": ["establishment-controller"],
+                "tags": ["Establishment"],
                 "operationId": "findById_5",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1246,7 +1249,7 @@
                 }
             },
             "put": {
-                "tags": ["establishment-controller"],
+                "tags": ["Establishment"],
                 "operationId": "update_4",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1283,7 +1286,7 @@
         },
         "/api/establishment/{establishmentId}/config/{establishmentConfigId}": {
             "get": {
-                "tags": ["establishment-controller"],
+                "tags": ["Establishment Config"],
                 "operationId": "findByIdEstablishmentConfig",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1315,7 +1318,7 @@
                 }
             },
             "put": {
-                "tags": ["establishment-controller"],
+                "tags": ["Establishment Config"],
                 "operationId": "updateEstablishmentConfig",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1359,7 +1362,7 @@
         },
         "/api/establishment/{establishmentId}/address/{addressId}": {
             "get": {
-                "tags": ["establishment-controller"],
+                "tags": ["Establishment Address"],
                 "operationId": "findByIdAddress_1",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1391,7 +1394,7 @@
                 }
             },
             "put": {
-                "tags": ["establishment-controller"],
+                "tags": ["Establishment Address"],
                 "operationId": "updateAddress_1",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1741,9 +1744,16 @@
         },
         "/api/{establishmentId}/user/{userId}/userEstablishment": {
             "get": {
-                "tags": ["user-establishment-controller"],
+                "tags": ["User Establishment"],
+                "summary": "Search establishments linked to the user",
                 "operationId": "findList",
                 "parameters": [{
+                    "name": "userEstablishmentId",
+                    "in": "query"
+                }, {
+                    "name": "establishmentId",
+                    "in": "query"
+                }, {
                     "name": "establishmentId",
                     "in": "path",
                     "required": true,
@@ -1758,13 +1768,6 @@
                     "schema": {
                         "type": "string",
                         "format": "uuid"
-                    }
-                }, {
-                    "name": "spec",
-                    "in": "query",
-                    "required": true,
-                    "schema": {
-                        "$ref": "#/components/schemas/UserEstablishmentSpec"
                     }
                 }, {
                     "name": "page",
@@ -1812,7 +1815,8 @@
                 }
             },
             "post": {
-                "tags": ["user-establishment-controller"],
+                "tags": ["User Establishment"],
+                "summary": "Link user with establishment",
                 "operationId": "insert",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1857,7 +1861,7 @@
         },
         "/api/user/{userId}/{establishmentId}/workHourSchedException": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["Work Hour Sched Exception"],
                 "operationId": "findListWorkHourSchedException",
                 "parameters": [{
                     "name": "userId",
@@ -1883,11 +1887,35 @@
                         "$ref": "#/components/schemas/WorkHourSchedExceptionSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -1904,7 +1932,7 @@
                 }
             },
             "post": {
-                "tags": ["user-controller"],
+                "tags": ["Work Hour Sched Exception"],
                 "operationId": "insertWorkHourSchedException",
                 "parameters": [{
                     "name": "userId",
@@ -1949,7 +1977,7 @@
         },
         "/api/user/{userId}/{establishmentId}/workDay": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["Work Day"],
                 "operationId": "findListWorkDay",
                 "parameters": [{
                     "name": "userId",
@@ -1975,11 +2003,35 @@
                         "$ref": "#/components/schemas/WorkDaySpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -1996,7 +2048,7 @@
                 }
             },
             "post": {
-                "tags": ["user-controller"],
+                "tags": ["Work Day"],
                 "operationId": "insertWorkDay",
                 "parameters": [{
                     "name": "userId",
@@ -2041,7 +2093,7 @@
         },
         "/api/user/{userId}/{establishmentId}/userPermission": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["User Permission"],
                 "operationId": "findListUserPermission",
                 "parameters": [{
                     "name": "userId",
@@ -2067,11 +2119,35 @@
                         "$ref": "#/components/schemas/UserPermissionSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -2088,7 +2164,7 @@
                 }
             },
             "post": {
-                "tags": ["user-controller"],
+                "tags": ["User Permission"],
                 "operationId": "insertUserPermission",
                 "parameters": [{
                     "name": "userId",
@@ -2133,7 +2209,7 @@
         },
         "/api/user/{userId}/{establishmentId}/monthWorkDay": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["Month Work Day"],
                 "operationId": "findListMonthWorkDay",
                 "parameters": [{
                     "name": "userId",
@@ -2159,11 +2235,35 @@
                         "$ref": "#/components/schemas/MonthWorkDaySpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -2180,7 +2280,7 @@
                 }
             },
             "post": {
-                "tags": ["user-controller"],
+                "tags": ["Month Work Day"],
                 "operationId": "insertMonthWorkDay",
                 "parameters": [{
                     "name": "userId",
@@ -2225,7 +2325,7 @@
         },
         "/api/user/{userId}/{establishmentId}/monthWorkDay/defaultWorkDay/{yearMonth}": {
             "post": {
-                "tags": ["user-controller"],
+                "tags": ["Month Work Day"],
                 "operationId": "insertDefaultMonthWork",
                 "parameters": [{
                     "name": "userId",
@@ -2267,7 +2367,7 @@
         },
         "/api/user/{userId}/{establishmentId}/defaultWorkSched": {
             "post": {
-                "tags": ["user-controller"],
+                "tags": ["Work Hour Sched Info"],
                 "operationId": "generateEmployeeWorkTime",
                 "parameters": [{
                     "name": "userId",
@@ -2295,7 +2395,7 @@
         },
         "/api/user/{userId}/userService": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["User Service"],
                 "operationId": "findListUserServiceDomain",
                 "parameters": [{
                     "name": "userId",
@@ -2334,7 +2434,7 @@
                 }
             },
             "post": {
-                "tags": ["user-controller"],
+                "tags": ["User Service"],
                 "operationId": "insertUserServiceDomain",
                 "parameters": [{
                     "name": "userId",
@@ -2371,7 +2471,7 @@
         },
         "/api/user/{userIdToReplicate}/{establishmentId}/monthWorkDay/replicate/{yearMonth}/{userIdDestination}": {
             "post": {
-                "tags": ["user-controller"],
+                "tags": ["Month Work Day"],
                 "operationId": "replicateConfigurationByUser",
                 "parameters": [{
                     "name": "establishmentId",
@@ -2421,7 +2521,7 @@
         },
         "/api/user/{establishmentId}/{userId}/lock": {
             "get": {
-                "tags": ["user-lock-controller"],
+                "tags": ["User Lock"],
                 "operationId": "findList_2",
                 "parameters": [{
                     "name": "userId",
@@ -2447,11 +2547,35 @@
                         "$ref": "#/components/schemas/UserLockSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -2468,7 +2592,7 @@
                 }
             },
             "post": {
-                "tags": ["user-lock-controller"],
+                "tags": ["User Lock"],
                 "operationId": "insert_1",
                 "parameters": [{
                     "name": "userId",
@@ -2513,7 +2637,7 @@
         },
         "/api/user/": {
             "post": {
-                "tags": ["user-controller"],
+                "tags": ["User"],
                 "operationId": "insert_2",
                 "parameters": [{
                     "name": "establishmentId",
@@ -2550,7 +2674,7 @@
         },
         "/api/user/{establishmentId}": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["User"],
                 "operationId": "findList_1",
                 "parameters": [{
                     "name": "establishmentId",
@@ -2568,11 +2692,35 @@
                         "$ref": "#/components/schemas/UserSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -2589,7 +2737,7 @@
                 }
             },
             "post": {
-                "tags": ["user-controller"],
+                "tags": ["User"],
                 "operationId": "insert_3",
                 "parameters": [{
                     "name": "establishmentId",
@@ -2626,7 +2774,7 @@
         },
         "/api/service/{serviceId}/serviceValue": {
             "get": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Value"],
                 "operationId": "findListServiceValue",
                 "parameters": [{
                     "name": "serviceId",
@@ -2665,7 +2813,7 @@
                 }
             },
             "post": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Value"],
                 "operationId": "insertServiceValue",
                 "parameters": [{
                     "name": "serviceId",
@@ -2702,7 +2850,7 @@
         },
         "/api/service/{serviceId}/serviceLink": {
             "get": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Link"],
                 "operationId": "findListServiceLink",
                 "parameters": [{
                     "name": "serviceId",
@@ -2741,7 +2889,7 @@
                 }
             },
             "post": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Link"],
                 "operationId": "insertServiceLink",
                 "parameters": [{
                     "name": "serviceId",
@@ -2778,7 +2926,7 @@
         },
         "/api/service/{establishmentId}": {
             "get": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service"],
                 "operationId": "findList_3",
                 "parameters": [{
                     "name": "establishmentId",
@@ -2796,11 +2944,35 @@
                         "$ref": "#/components/schemas/ServiceSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -2817,7 +2989,7 @@
                 }
             },
             "post": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service"],
                 "operationId": "insert_4",
                 "parameters": [{
                     "name": "establishmentId",
@@ -2854,7 +3026,7 @@
         },
         "/api/service/{establishmentId}/category": {
             "get": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Category"],
                 "operationId": "findListCategory",
                 "parameters": [{
                     "name": "establishmentId",
@@ -2872,11 +3044,35 @@
                         "$ref": "#/components/schemas/CategorySpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -2893,7 +3089,7 @@
                 }
             },
             "post": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Category"],
                 "operationId": "insertCategory",
                 "parameters": [{
                     "name": "establishmentId",
@@ -2930,7 +3126,7 @@
         },
         "/api/scheduling/{schedulingId}/service": {
             "get": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling Service"],
                 "operationId": "findListService",
                 "parameters": [{
                     "name": "schedulingId",
@@ -2948,11 +3144,35 @@
                         "$ref": "#/components/schemas/SchedulingServiceSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -2969,7 +3189,7 @@
                 }
             },
             "post": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling Service"],
                 "operationId": "insertService",
                 "parameters": [{
                     "name": "schedulingId",
@@ -3006,7 +3226,7 @@
         },
         "/api/scheduling/{establishmentId}": {
             "get": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling"],
                 "operationId": "findList_4",
                 "parameters": [{
                     "name": "establishmentId",
@@ -3045,7 +3265,7 @@
                 }
             },
             "post": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling"],
                 "operationId": "insert_5",
                 "parameters": [{
                     "name": "establishmentId",
@@ -3082,7 +3302,7 @@
         },
         "/api/public/establishment/scheduling/{establishmentId}": {
             "post": {
-                "tags": ["public-controller"],
+                "tags": ["Public"],
                 "operationId": "addScheduling",
                 "parameters": [{
                     "name": "establishmentId",
@@ -3120,7 +3340,7 @@
         },
         "/api/establishment": {
             "get": {
-                "tags": ["establishment-controller"],
+                "tags": ["Establishment"],
                 "operationId": "findList_5",
                 "parameters": [{
                     "name": "spec",
@@ -3130,11 +3350,35 @@
                         "$ref": "#/components/schemas/EstablishmentSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -3151,7 +3395,7 @@
                 }
             },
             "post": {
-                "tags": ["establishment-controller"],
+                "tags": ["Establishment"],
                 "operationId": "insert_6",
                 "requestBody": {
                     "content": {
@@ -3179,7 +3423,7 @@
         },
         "/api/auth/recoverPassword": {
             "post": {
-                "tags": ["auth-controller"],
+                "tags": ["Auth"],
                 "operationId": "recoverPassword",
                 "requestBody": {
                     "content": {
@@ -3208,7 +3452,7 @@
         },
         "/api/auth/newUser": {
             "post": {
-                "tags": ["auth-controller"],
+                "tags": ["Auth"],
                 "operationId": "newUser",
                 "requestBody": {
                     "content": {
@@ -3237,7 +3481,7 @@
         },
         "/api/auth/login": {
             "post": {
-                "tags": ["auth-controller"],
+                "tags": ["Auth"],
                 "operationId": "login",
                 "requestBody": {
                     "content": {
@@ -3360,11 +3604,35 @@
                         "$ref": "#/components/schemas/AttendanceServiceSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -3418,7 +3686,7 @@
         },
         "/api/user/{userId}/{establishmentId}/workHourSchedException/{workHourSchedExceptionId}": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["Work Hour Sched Exception"],
                 "operationId": "findByIdWorkHourSchedException",
                 "parameters": [{
                     "name": "userId",
@@ -3459,7 +3727,7 @@
                 }
             },
             "delete": {
-                "tags": ["user-controller"],
+                "tags": ["Work Hour Sched Exception"],
                 "operationId": "deleteWorkHourSchedException",
                 "parameters": [{
                     "name": "userId",
@@ -3495,7 +3763,7 @@
         },
         "/api/user/{userId}/{establishmentId}/workDay/user": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["Work Day"],
                 "operationId": "findListUserWorkDay",
                 "parameters": [{
                     "name": "userId",
@@ -3533,7 +3801,7 @@
         },
         "/api/user/{userId}/{establishmentId}/userPermission/{userPermissionId}": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["User Permission"],
                 "operationId": "findByIdUserPermission",
                 "parameters": [{
                     "name": "userId",
@@ -3574,7 +3842,7 @@
                 }
             },
             "delete": {
-                "tags": ["user-controller"],
+                "tags": ["User Permission"],
                 "operationId": "deleteUserPermission",
                 "parameters": [{
                     "name": "userId",
@@ -3610,7 +3878,7 @@
         },
         "/api/user/{userId}/{establishmentId}/monthWorkDay/{workDayId}": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["Month Work Day"],
                 "operationId": "findByIdMonthWorkDay",
                 "parameters": [{
                     "name": "userId",
@@ -3651,7 +3919,7 @@
                 }
             },
             "delete": {
-                "tags": ["user-controller"],
+                "tags": ["Month Work Day"],
                 "operationId": "deleteMonthWorkDay",
                 "parameters": [{
                     "name": "userId",
@@ -3687,7 +3955,7 @@
         },
         "/api/user/{userId}/userService/{userServiceId}": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["User Service"],
                 "operationId": "findByIdUserServiceDomain",
                 "parameters": [{
                     "name": "userId",
@@ -3720,7 +3988,7 @@
                 }
             },
             "delete": {
-                "tags": ["user-controller"],
+                "tags": ["User Service"],
                 "operationId": "deleteUserServiceDomain",
                 "parameters": [{
                     "name": "userId",
@@ -3748,7 +4016,7 @@
         },
         "/api/user/{establishmentId}/{userId}/lock/{userLockId}": {
             "get": {
-                "tags": ["user-lock-controller"],
+                "tags": ["User Lock"],
                 "operationId": "findById_2",
                 "parameters": [{
                     "name": "userId",
@@ -3791,7 +4059,7 @@
         },
         "/api/user/{establishmentId}/workHourSched/{userEmployeeId}/{day}": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["Work Hour Sched Info"],
                 "operationId": "workHourSchedList",
                 "parameters": [{
                     "name": "establishmentId",
@@ -3818,11 +4086,35 @@
                         "format": "date"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -3841,7 +4133,7 @@
         },
         "/api/user/{establishmentId}/perm/{tpPermissionType}": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["User"],
                 "operationId": "findListTpPermission",
                 "parameters": [{
                     "name": "establishmentId",
@@ -3867,11 +4159,35 @@
                         "$ref": "#/components/schemas/UserSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -3890,7 +4206,7 @@
         },
         "/api/user/{establishmentId}/establishment": {
             "get": {
-                "tags": ["user-controller"],
+                "tags": ["User"],
                 "operationId": "findAllWithEstablishment",
                 "parameters": [{
                     "name": "establishmentId",
@@ -3938,7 +4254,7 @@
         },
         "/api/service/{establishmentId}/withValue": {
             "get": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service"],
                 "operationId": "findListWithValue",
                 "parameters": [{
                     "name": "establishmentId",
@@ -3968,7 +4284,7 @@
         },
         "/api/service/{establishmentId}/serviceValue/grouped": {
             "get": {
-                "tags": ["service-domain-controller"],
+                "tags": ["Service Value"],
                 "operationId": "findListServiceValueGroupedByEstablishment",
                 "parameters": [{
                     "name": "establishmentId",
@@ -4005,7 +4321,7 @@
         },
         "/api/scheduling/{establishmentId}/{beginFilter}/{endFilter}/{justFreeTime}": {
             "get": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling"],
                 "operationId": "findSchedulingList",
                 "parameters": [{
                     "name": "establishmentId",
@@ -4075,7 +4391,7 @@
         },
         "/api/scheduling/{establishmentId}/reduced": {
             "get": {
-                "tags": ["scheduling-controller"],
+                "tags": ["Scheduling"],
                 "operationId": "findListReduced",
                 "parameters": [{
                     "name": "establishmentId",
@@ -4109,7 +4425,7 @@
         },
         "/api/public/establishment": {
             "get": {
-                "tags": ["public-controller"],
+                "tags": ["Public"],
                 "operationId": "findListEstablishment",
                 "parameters": [{
                     "name": "spec",
@@ -4119,11 +4435,35 @@
                         "$ref": "#/components/schemas/EstablishmentSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -4143,7 +4483,7 @@
         },
         "/api/public/establishment/{establishmentId}/userEstablishment/employee": {
             "get": {
-                "tags": ["public-controller"],
+                "tags": ["Public"],
                 "operationId": "findListEstablishmentAttendant",
                 "parameters": [{
                     "name": "establishmentId",
@@ -4161,11 +4501,35 @@
                         "$ref": "#/components/schemas/UserEstablishmentSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -4185,7 +4549,7 @@
         },
         "/api/public/establishment/{establishmentId}/service": {
             "get": {
-                "tags": ["public-controller"],
+                "tags": ["Public"],
                 "operationId": "findListServiceByEstablishment",
                 "parameters": [{
                     "name": "establishmentId",
@@ -4203,11 +4567,35 @@
                         "$ref": "#/components/schemas/ServiceSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -4227,7 +4615,7 @@
         },
         "/api/public/establishment/{establishmentId}/service/groupedValue": {
             "get": {
-                "tags": ["public-controller"],
+                "tags": ["Public"],
                 "operationId": "findListGroupedByEstablishment",
                 "parameters": [{
                     "name": "establishmentId",
@@ -4265,7 +4653,7 @@
         },
         "/api/public/establishment/scheduling/{schedulingId}": {
             "get": {
-                "tags": ["public-controller"],
+                "tags": ["Public"],
                 "operationId": "findByIdEstablishmentSchedulingByUser",
                 "parameters": [{
                     "name": "schedulingId",
@@ -4293,7 +4681,7 @@
         },
         "/api/public/establishment/scheduling/{schedulingId}/service": {
             "get": {
-                "tags": ["public-controller"],
+                "tags": ["Public"],
                 "operationId": "findListEstablishmentSchedulingServiceByUser",
                 "parameters": [{
                     "name": "schedulingId",
@@ -4311,11 +4699,35 @@
                         "$ref": "#/components/schemas/SchedulingServiceSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -4335,7 +4747,7 @@
         },
         "/api/public/establishment/scheduling/{establishmentId}/{beginFilter}/{endFilter}": {
             "get": {
-                "tags": ["public-controller"],
+                "tags": ["Public"],
                 "operationId": "findFreeSchedulingList",
                 "parameters": [{
                     "name": "establishmentId",
@@ -4398,7 +4810,7 @@
         },
         "/api/public/establishment/scheduling/{establishmentId}/user/{phoneNumber}/{publicReference}": {
             "get": {
-                "tags": ["public-controller"],
+                "tags": ["Public"],
                 "operationId": "findListEstablishmentSchedulingByUser",
                 "parameters": [{
                     "name": "establishmentId",
@@ -4454,7 +4866,7 @@
         },
         "/api/establishment/{establishmentId}/userEstablishment/employee": {
             "get": {
-                "tags": ["establishment-controller"],
+                "tags": ["Establishment Employee"],
                 "operationId": "findListEstablishmentAttendant_1",
                 "parameters": [{
                     "name": "establishmentId",
@@ -4472,11 +4884,35 @@
                         "$ref": "#/components/schemas/UserEstablishmentSpec"
                     }
                 }, {
-                    "name": "pageable",
+                    "name": "page",
                     "in": "query",
-                    "required": true,
+                    "description": "Zero-based page index (0..N)",
+                    "required": false,
                     "schema": {
-                        "$ref": "#/components/schemas/Pageable"
+                        "minimum": 0,
+                        "type": "integer",
+                        "default": 0
+                    }
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "The size of the page to be returned",
+                    "required": false,
+                    "schema": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 20
+                    }
+                }, {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }],
                 "responses": {
@@ -5286,6 +5722,7 @@
                 }
             },
             "UserEstablishment": {
+                "required": ["createdAt", "establishment", "isDefaultType", "linkedUser", "userEstablishmentId"],
                 "type": "object",
                 "properties": {
                     "userEstablishmentId": {
@@ -5955,9 +6392,6 @@
                     }
                 }
             },
-            "UserEstablishmentSpec": {
-                "type": "object"
-            },
             "PageUserEstablishment": {
                 "type": "object",
                 "properties": {
@@ -6014,6 +6448,12 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
+                    "paged": {
+                        "type": "boolean"
+                    },
+                    "unpaged": {
+                        "type": "boolean"
+                    },
                     "pageSize": {
                         "type": "integer",
                         "format": "int32"
@@ -6021,12 +6461,6 @@
                     "pageNumber": {
                         "type": "integer",
                         "format": "int32"
-                    },
-                    "paged": {
-                        "type": "boolean"
-                    },
-                    "unpaged": {
-                        "type": "boolean"
                     }
                 }
             },
@@ -6036,37 +6470,16 @@
                     "empty": {
                         "type": "boolean"
                     },
-                    "sorted": {
+                    "unsorted": {
                         "type": "boolean"
                     },
-                    "unsorted": {
+                    "sorted": {
                         "type": "boolean"
                     }
                 }
             },
             "WorkHourSchedExceptionSpec": {
                 "type": "object"
-            },
-            "Pageable": {
-                "type": "object",
-                "properties": {
-                    "page": {
-                        "minimum": 0,
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "size": {
-                        "minimum": 1,
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "sort": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    }
-                }
             },
             "PageWorkHourSchedException": {
                 "type": "object",
@@ -6166,28 +6579,28 @@
             "WorkDayUserProjection": {
                 "type": "object",
                 "properties": {
-                    "dayWeek": {
-                        "type": "string"
-                    },
                     "userEmployeeId": {
-                        "type": "string"
-                    },
-                    "establishmentId": {
                         "type": "string"
                     },
                     "workDayId": {
                         "type": "string"
                     },
-                    "endService": {
+                    "establishmentId": {
                         "type": "string"
                     },
-                    "endBreak": {
+                    "dayWeek": {
                         "type": "string"
                     },
                     "startBreak": {
                         "type": "string"
                     },
+                    "endService": {
+                        "type": "string"
+                    },
                     "startService": {
+                        "type": "string"
+                    },
+                    "endBreak": {
                         "type": "string"
                     }
                 }
@@ -6292,6 +6705,27 @@
             },
             "UserServiceSpec": {
                 "type": "object"
+            },
+            "Pageable": {
+                "type": "object",
+                "properties": {
+                    "page": {
+                        "minimum": 0,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "size": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "sort": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
             },
             "PageUserServiceDomain": {
                 "type": "object",
@@ -6489,9 +6923,6 @@
                     "hour": {
                         "$ref": "#/components/schemas/LocalTime"
                     },
-                    "dayWeek": {
-                        "type": "string"
-                    },
                     "situationType": {
                         "type": "string",
                         "enum": ["ACTIVE", "CANCELED"]
@@ -6500,6 +6931,9 @@
                         "type": "string"
                     },
                     "workHourSchedExceptionId": {
+                        "type": "string"
+                    },
+                    "dayWeek": {
                         "type": "string"
                     },
                     "isException": {
@@ -6568,10 +7002,10 @@
                     "userId": {
                         "type": "string"
                     },
-                    "telephone": {
+                    "email": {
                         "type": "string"
                     },
-                    "email": {
+                    "telephone": {
                         "type": "string"
                     }
                 }
@@ -6732,13 +7166,13 @@
                     "value": {
                         "type": "number"
                     },
-                    "serviceId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
                     "amountTime": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "serviceId": {
+                        "type": "string",
+                        "format": "uuid"
                     }
                 }
             },
@@ -7059,6 +7493,9 @@
                         "type": "boolean"
                     }
                 }
+            },
+            "UserEstablishmentSpec": {
+                "type": "object"
             },
             "AttendanceSpec": {
                 "type": "object"
