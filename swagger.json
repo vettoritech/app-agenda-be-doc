@@ -6,8 +6,11 @@
         "version": "v0.0.*"
     },
     "servers": [{
-        "url": "http://localhost:8080",
-        "description": "Generated server url"
+        "url": "http://ec2-54-159-12-88.compute-1.amazonaws.com",
+        "description": "Deploy"
+    }],
+    "security": [{
+        "bearer-key": []
     }],
     "paths": {
         "/api/{establishmentId}/user/{userId}/userEstablishment/{userEstablishmentId}": {
@@ -3111,7 +3114,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/establishment": {
@@ -3198,7 +3202,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/auth/newUser": {
@@ -3226,7 +3231,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/auth/login": {
@@ -3254,7 +3260,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/attendance/{establishmentId}": {
@@ -4130,7 +4137,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/public/establishment/{establishmentId}/userEstablishment/employee": {
@@ -4171,7 +4179,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/public/establishment/{establishmentId}/service": {
@@ -4212,7 +4221,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/public/establishment/{establishmentId}/service/groupedValue": {
@@ -4249,7 +4259,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/public/establishment/scheduling/{schedulingId}": {
@@ -4276,7 +4287,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/public/establishment/scheduling/{schedulingId}/service": {
@@ -4317,7 +4329,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/public/establishment/scheduling/{establishmentId}/{beginFilter}/{endFilter}": {
@@ -4379,7 +4392,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/public/establishment/scheduling/{establishmentId}/user/{phoneNumber}/{publicReference}": {
@@ -4434,7 +4448,8 @@
                             }
                         }
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/establishment/{establishmentId}/userEstablishment/employee": {
@@ -5971,9 +5986,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -5983,6 +5995,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6007,10 +6022,10 @@
                         "type": "integer",
                         "format": "int32"
                     },
-                    "unpaged": {
+                    "paged": {
                         "type": "boolean"
                     },
-                    "paged": {
+                    "unpaged": {
                         "type": "boolean"
                     }
                 }
@@ -6081,9 +6096,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6093,6 +6105,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6130,9 +6145,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6143,6 +6155,9 @@
                         "type": "integer",
                         "format": "int32"
                     },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
+                    },
                     "empty": {
                         "type": "boolean"
                     }
@@ -6151,13 +6166,13 @@
             "WorkDayUserProjection": {
                 "type": "object",
                 "properties": {
-                    "establishmentId": {
-                        "type": "string"
-                    },
                     "dayWeek": {
                         "type": "string"
                     },
                     "userEmployeeId": {
+                        "type": "string"
+                    },
+                    "establishmentId": {
                         "type": "string"
                     },
                     "workDayId": {
@@ -6166,13 +6181,13 @@
                     "endService": {
                         "type": "string"
                     },
+                    "endBreak": {
+                        "type": "string"
+                    },
                     "startBreak": {
                         "type": "string"
                     },
                     "startService": {
-                        "type": "string"
-                    },
-                    "endBreak": {
                         "type": "string"
                     }
                 }
@@ -6208,9 +6223,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6220,6 +6232,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6257,9 +6272,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6269,6 +6281,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6306,9 +6321,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6318,6 +6330,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6355,9 +6370,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6367,6 +6379,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6404,9 +6419,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6416,6 +6428,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6450,9 +6465,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6462,6 +6474,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6474,9 +6489,6 @@
                     "hour": {
                         "$ref": "#/components/schemas/LocalTime"
                     },
-                    "workHourSchedExceptionId": {
-                        "type": "string"
-                    },
                     "dayWeek": {
                         "type": "string"
                     },
@@ -6485,6 +6497,9 @@
                         "enum": ["ACTIVE", "CANCELED"]
                     },
                     "workHourId": {
+                        "type": "string"
+                    },
+                    "workHourSchedExceptionId": {
                         "type": "string"
                     },
                     "isException": {
@@ -6520,9 +6535,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6532,6 +6544,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6544,19 +6559,19 @@
                     "name": {
                         "type": "string"
                     },
-                    "userId": {
+                    "situationType": {
                         "type": "string"
                     },
-                    "email": {
+                    "nickname": {
+                        "type": "string"
+                    },
+                    "userId": {
                         "type": "string"
                     },
                     "telephone": {
                         "type": "string"
                     },
-                    "situationType": {
-                        "type": "string"
-                    },
-                    "nickname": {
+                    "email": {
                         "type": "string"
                     }
                 }
@@ -6592,9 +6607,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6604,6 +6616,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6641,9 +6656,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6653,6 +6665,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6690,9 +6705,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6702,6 +6714,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6761,9 +6776,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6773,6 +6785,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6810,9 +6825,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6822,6 +6834,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6859,9 +6874,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6871,6 +6883,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -6948,9 +6963,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -6960,6 +6972,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -7027,9 +7042,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -7039,6 +7051,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -7076,9 +7091,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -7088,6 +7100,9 @@
                     "numberOfElements": {
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
                     },
                     "empty": {
                         "type": "boolean"
@@ -7125,9 +7140,6 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "pageable": {
-                        "$ref": "#/components/schemas/PageableObject"
-                    },
                     "first": {
                         "type": "boolean"
                     },
@@ -7138,10 +7150,20 @@
                         "type": "integer",
                         "format": "int32"
                     },
+                    "pageable": {
+                        "$ref": "#/components/schemas/PageableObject"
+                    },
                     "empty": {
                         "type": "boolean"
                     }
                 }
+            }
+        },
+        "securitySchemes": {
+            "bearer-key": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
             }
         }
     }
