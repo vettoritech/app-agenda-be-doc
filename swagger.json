@@ -1438,7 +1438,7 @@
         },
         "/api/attendance/{establishmentId}/{attendanceId}": {
             "get": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance"],
                 "operationId": "findById_6",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1471,7 +1471,7 @@
                 }
             },
             "put": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance"],
                 "operationId": "update_5",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1516,7 +1516,7 @@
         },
         "/api/attendance/{establishmentId}/finish/{attendanceId}": {
             "put": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance"],
                 "operationId": "finishAttendance",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1561,7 +1561,7 @@
         },
         "/api/attendance/{establishmentId}/cancel/{attendanceId}": {
             "put": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance"],
                 "operationId": "cancelAttendance",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1596,7 +1596,7 @@
         },
         "/api/attendance/{establishmentId}/absent/{attendanceId}": {
             "put": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance"],
                 "operationId": "absentAttendance",
                 "parameters": [{
                     "name": "establishmentId",
@@ -1631,7 +1631,7 @@
         },
         "/api/attendance/{attendanceId}/service/{attendanceServiceId}": {
             "get": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance Service"],
                 "operationId": "findByIdAttendanceService",
                 "parameters": [{
                     "name": "attendanceId",
@@ -1664,7 +1664,7 @@
                 }
             },
             "put": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance Service"],
                 "operationId": "updateAttendanceService",
                 "parameters": [{
                     "name": "attendanceId",
@@ -1709,7 +1709,7 @@
         },
         "/api/attendance/{attendanceId}/service/cancel/{attendanceServiceId}": {
             "put": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance Service"],
                 "operationId": "cancelAttendanceService",
                 "parameters": [{
                     "name": "attendanceId",
@@ -3510,7 +3510,7 @@
         },
         "/api/attendance/{establishmentId}": {
             "get": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance"],
                 "operationId": "findList_6",
                 "parameters": [{
                     "name": "establishmentId",
@@ -3549,7 +3549,7 @@
                 }
             },
             "post": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance"],
                 "operationId": "insert_7",
                 "parameters": [{
                     "name": "establishmentId",
@@ -3586,7 +3586,7 @@
         },
         "/api/attendance/{attendanceId}/service": {
             "get": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance Service"],
                 "operationId": "findListAttendanceService",
                 "parameters": [{
                     "name": "attendanceId",
@@ -3649,7 +3649,7 @@
                 }
             },
             "post": {
-                "tags": ["attendance-controller"],
+                "tags": ["Attendance Service"],
                 "operationId": "insertAttendanceService",
                 "parameters": [{
                     "name": "attendanceId",
@@ -4987,173 +4987,6 @@
                     "createdAt": {
                         "type": "string",
                         "format": "date-time"
-                    },
-                    "userAddress": {
-                        "$ref": "#/components/schemas/User"
-                    },
-                    "establishmentAddress": {
-                        "$ref": "#/components/schemas/Establishment"
-                    }
-                }
-            },
-            "AttendanceDomain": {
-                "type": "object",
-                "properties": {
-                    "attendanceId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "establishment": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "attendantUser": {
-                        "$ref": "#/components/schemas/User"
-                    },
-                    "clientUser": {
-                        "$ref": "#/components/schemas/User"
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "paymentType": {
-                        "type": "string",
-                        "enum": ["MONEY", "CREDIT_CARD", "DEBIT_CARD", "PIX", "PIC_PAY"]
-                    },
-                    "situationType": {
-                        "type": "string",
-                        "enum": ["ACTIVE", "PARTIALLY_ANSWERED", "CONCLUDED", "ABSENT", "CANCELED"]
-                    },
-                    "observation": {
-                        "type": "string"
-                    },
-                    "attendanceServiceDomains": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/AttendanceServiceDomain"
-                        }
-                    },
-                    "scheduling": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/SchedulingDomain"
-                        }
-                    }
-                }
-            },
-            "AttendanceServiceDomain": {
-                "type": "object",
-                "properties": {
-                    "attendanceServiceId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "attendance": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "service": {
-                        "$ref": "#/components/schemas/ServiceDomain"
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "quantity": {
-                        "type": "number"
-                    },
-                    "value": {
-                        "type": "number"
-                    },
-                    "situationType": {
-                        "type": "string",
-                        "enum": ["ACTIVE", "CANCELED"]
-                    },
-                    "schedulingService": {
-                        "$ref": "#/components/schemas/SchedulingServiceDomain"
-                    }
-                }
-            },
-            "Category": {
-                "type": "object",
-                "properties": {
-                    "categoryId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "situationType": {
-                        "type": "string",
-                        "enum": ["ACTIVE", "CANCELED"]
-                    },
-                    "establishment": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "services": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/ServiceDomain"
-                        }
-                    },
-                    "serviceLinks": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/ServiceLink"
-                        }
-                    }
-                }
-            },
-            "CrudLog": {
-                "type": "object",
-                "properties": {
-                    "crudLogId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "userLog": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "operationType": {
-                        "type": "string",
-                        "enum": ["INSERT", "UPDATE", "DELETE"]
-                    },
-                    "modelReference": {
-                        "type": "string"
-                    },
-                    "modelReferenceId": {
-                        "type": "string"
-                    },
-                    "modelReferenceIdValue": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "bitData": {
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "format": "byte"
-                        }
                     }
                 }
             },
@@ -5189,86 +5022,6 @@
                     },
                     "establishmentConfig": {
                         "$ref": "#/components/schemas/EstablishmentConfig"
-                    },
-                    "userEstablishments": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserEstablishment"
-                        }
-                    },
-                    "userPermissions": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserPermission"
-                        }
-                    },
-                    "services": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/ServiceDomain"
-                        }
-                    },
-                    "categories": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/Category"
-                        }
-                    },
-                    "schedulings": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/SchedulingDomain"
-                        }
-                    },
-                    "schedulingDomains": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/SchedulingDomain"
-                        }
-                    },
-                    "attendanceDomains": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/AttendanceDomain"
-                        }
-                    },
-                    "workDays": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/WorkDay"
-                        }
-                    },
-                    "workHourScheds": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/WorkHourSched"
-                        }
-                    },
-                    "userLocks": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserLock"
-                        }
                     }
                 }
             },
@@ -5293,286 +5046,6 @@
                     },
                     "establishment": {
                         "$ref": "#/components/schemas/Establishment"
-                    }
-                }
-            },
-            "LocalTime": {
-                "type": "object",
-                "properties": {
-                    "hour": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "minute": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "second": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "nano": {
-                        "type": "integer",
-                        "format": "int32"
-                    }
-                }
-            },
-            "Permission": {
-                "type": "object",
-                "properties": {
-                    "permissionKey": {
-                        "type": "string",
-                        "enum": ["ROLE_ADM", "ROLE_OWNER", "ROLE_EMPLOYEE", "ROLE_CLIENT", "ROLE_PRE_CLIENT"]
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "userPermissions": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserPermission"
-                        }
-                    }
-                }
-            },
-            "SchedulingDomain": {
-                "type": "object",
-                "properties": {
-                    "schedulingId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "establishment": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "beginIn": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "endIn": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "attendantUser": {
-                        "$ref": "#/components/schemas/User"
-                    },
-                    "clientUser": {
-                        "$ref": "#/components/schemas/User"
-                    },
-                    "situationType": {
-                        "type": "string",
-                        "enum": ["PRE_SCHEDULED", "SCHEDULED", "REFUSED", "CANCELED"]
-                    },
-                    "observation": {
-                        "type": "string"
-                    },
-                    "publicReference": {
-                        "type": "string"
-                    },
-                    "totalServiceValue": {
-                        "type": "number"
-                    },
-                    "attendance": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "schedulingServiceDomains": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/SchedulingServiceDomain"
-                        }
-                    }
-                }
-            },
-            "SchedulingServiceDomain": {
-                "type": "object",
-                "properties": {
-                    "schedulingServiceId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "scheduling": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "service": {
-                        "$ref": "#/components/schemas/ServiceDomain"
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "value": {
-                        "type": "number"
-                    },
-                    "situationType": {
-                        "type": "string",
-                        "enum": ["ACTIVE", "CANCELED"]
-                    },
-                    "attendanceService": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "serviceValue": {
-                        "$ref": "#/components/schemas/ServiceValue"
-                    }
-                }
-            },
-            "ServiceDomain": {
-                "type": "object",
-                "properties": {
-                    "serviceId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "establishment": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "category": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "amountTime": {
-                        "type": "integer",
-                        "format": "int64"
-                    },
-                    "situationType": {
-                        "type": "string",
-                        "enum": ["ACTIVE", "CANCELED"]
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "value": {
-                        "type": "number"
-                    },
-                    "serviceValueList": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/ServiceValue"
-                        }
-                    },
-                    "serviceValues": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/ServiceValue"
-                        }
-                    },
-                    "linkedServices": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/ServiceLink"
-                        }
-                    },
-                    "schedulingServiceDomains": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/SchedulingServiceDomain"
-                        }
-                    },
-                    "relatedServices": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/ServiceLink"
-                        }
-                    },
-                    "serviceLinkeds": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserServiceDomain"
-                        }
-                    },
-                    "attendanceServiceDomains": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/AttendanceServiceDomain"
-                        }
-                    }
-                }
-            },
-            "ServiceLink": {
-                "type": "object",
-                "properties": {
-                    "serviceLinkId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "linkedService": {
-                        "$ref": "#/components/schemas/ServiceDomain"
-                    },
-                    "relatedService": {
-                        "$ref": "#/components/schemas/ServiceDomain"
-                    },
-                    "relatedCategory": {
-                        "$ref": "#/components/schemas/Category"
-                    },
-                    "quantity": {
-                        "type": "number"
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    }
-                }
-            },
-            "ServiceValue": {
-                "type": "object",
-                "properties": {
-                    "serviceValueId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "service": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "value": {
-                        "type": "number"
-                    },
-                    "situationType": {
-                        "type": "string",
-                        "enum": ["ACTIVE", "CANCELED"]
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "schedulingServiceDomains": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/SchedulingServiceDomain"
-                        }
                     }
                 }
             },
@@ -5606,118 +5079,6 @@
                     "address": {
                         "type": "string",
                         "format": "uuid"
-                    },
-                    "establishmentResponsibleUsers": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/Establishment"
-                        }
-                    },
-                    "userLog": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/CrudLog"
-                        }
-                    },
-                    "userEstablishments": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserEstablishment"
-                        }
-                    },
-                    "userPermissions": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserPermission"
-                        }
-                    },
-                    "schedulingAttendants": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/SchedulingDomain"
-                        }
-                    },
-                    "schedulingClients": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/SchedulingDomain"
-                        }
-                    },
-                    "userServices": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserServiceDomain"
-                        }
-                    },
-                    "attendanceAttendantDomains": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/AttendanceDomain"
-                        }
-                    },
-                    "attendanceClientDomains": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/AttendanceDomain"
-                        }
-                    },
-                    "workDays": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/WorkDay"
-                        }
-                    },
-                    "workHourScheds": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/WorkHourSched"
-                        }
-                    },
-                    "userLocks": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserLock"
-                        }
-                    },
-                    "manualLockUsers": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserLock"
-                        }
-                    },
-                    "unlockUsers": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "writeOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/UserLock"
-                        }
                     }
                 }
             },
@@ -5748,79 +5109,49 @@
                     }
                 }
             },
-            "UserLock": {
+            "LocalTime": {
                 "type": "object",
                 "properties": {
-                    "userLockId": {
-                        "type": "string",
-                        "format": "uuid"
+                    "hour": {
+                        "type": "integer",
+                        "format": "int32"
                     },
-                    "establishment": {
-                        "$ref": "#/components/schemas/Establishment"
+                    "minute": {
+                        "type": "integer",
+                        "format": "int32"
                     },
-                    "lockedUser": {
-                        "$ref": "#/components/schemas/User"
+                    "second": {
+                        "type": "integer",
+                        "format": "int32"
                     },
-                    "lockedAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "manualLockUser": {
-                        "$ref": "#/components/schemas/User"
-                    },
-                    "situationType": {
-                        "type": "string",
-                        "enum": ["BLOCKED", "UNLOCKED"]
-                    },
-                    "unlockUser": {
-                        "$ref": "#/components/schemas/User"
-                    },
-                    "unlockAt": {
-                        "type": "string",
-                        "format": "date-time"
+                    "nano": {
+                        "type": "integer",
+                        "format": "int32"
                     }
                 }
             },
-            "UserPermission": {
+            "WorkDayDto": {
                 "type": "object",
                 "properties": {
-                    "userPermissionId": {
+                    "dayWeek": {
+                        "type": "string",
+                        "enum": ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]
+                    },
+                    "startService": {
+                        "$ref": "#/components/schemas/LocalTime"
+                    },
+                    "startBreak": {
+                        "$ref": "#/components/schemas/LocalTime"
+                    },
+                    "endBreak": {
+                        "$ref": "#/components/schemas/LocalTime"
+                    },
+                    "endService": {
+                        "$ref": "#/components/schemas/LocalTime"
+                    },
+                    "userEmployeeId": {
                         "type": "string",
                         "format": "uuid"
-                    },
-                    "user": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "permission": {
-                        "$ref": "#/components/schemas/Permission"
-                    },
-                    "establishment": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    }
-                }
-            },
-            "UserServiceDomain": {
-                "type": "object",
-                "properties": {
-                    "userServiceId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "user": {
-                        "$ref": "#/components/schemas/User"
-                    },
-                    "serviceLinked": {
-                        "$ref": "#/components/schemas/ServiceDomain"
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
                     }
                 }
             },
@@ -5864,82 +5195,6 @@
                         "format": "uuid"
                     },
                     "establishment": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }
-            },
-            "WorkHourSched": {
-                "type": "object",
-                "properties": {
-                    "workHourId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "dayWeek": {
-                        "type": "string",
-                        "enum": ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]
-                    },
-                    "hour": {
-                        "$ref": "#/components/schemas/LocalTime"
-                    },
-                    "establishment": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "userEmployee": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "situationType": {
-                        "type": "string",
-                        "enum": ["ACTIVE", "CANCELED"]
-                    },
-                    "workHourSchedExceptions": {
-                        "$ref": "#/components/schemas/WorkHourSchedException"
-                    }
-                }
-            },
-            "WorkHourSchedException": {
-                "type": "object",
-                "properties": {
-                    "workHourSchedExceptionId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "dayException": {
-                        "type": "string",
-                        "format": "date"
-                    },
-                    "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "workHourSched": {
-                        "$ref": "#/components/schemas/WorkHourSched"
-                    }
-                }
-            },
-            "WorkDayDto": {
-                "type": "object",
-                "properties": {
-                    "dayWeek": {
-                        "type": "string",
-                        "enum": ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]
-                    },
-                    "startService": {
-                        "$ref": "#/components/schemas/LocalTime"
-                    },
-                    "startBreak": {
-                        "$ref": "#/components/schemas/LocalTime"
-                    },
-                    "endBreak": {
-                        "$ref": "#/components/schemas/LocalTime"
-                    },
-                    "endService": {
-                        "$ref": "#/components/schemas/LocalTime"
-                    },
-                    "userEmployeeId": {
                         "type": "string",
                         "format": "uuid"
                     }
@@ -6015,6 +5270,39 @@
                     }
                 }
             },
+            "UserLock": {
+                "type": "object",
+                "properties": {
+                    "userLockId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "establishment": {
+                        "$ref": "#/components/schemas/Establishment"
+                    },
+                    "lockedUser": {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "lockedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "manualLockUser": {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "situationType": {
+                        "type": "string",
+                        "enum": ["BLOCKED", "UNLOCKED"]
+                    },
+                    "unlockUser": {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "unlockAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
             "ServiceValueDto": {
                 "type": "object",
                 "properties": {
@@ -6023,6 +5311,33 @@
                     },
                     "description": {
                         "type": "string"
+                    }
+                }
+            },
+            "ServiceValue": {
+                "type": "object",
+                "properties": {
+                    "serviceValueId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "service": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "number"
+                    },
+                    "situationType": {
+                        "type": "string",
+                        "enum": ["ACTIVE", "CANCELED"]
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
                     }
                 }
             },
@@ -6039,6 +5354,96 @@
                     },
                     "quantity": {
                         "type": "number"
+                    }
+                }
+            },
+            "Category": {
+                "type": "object",
+                "properties": {
+                    "categoryId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "situationType": {
+                        "type": "string",
+                        "enum": ["ACTIVE", "CANCELED"]
+                    },
+                    "establishment": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "ServiceDomain": {
+                "type": "object",
+                "properties": {
+                    "serviceId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "establishment": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "category": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "amountTime": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "situationType": {
+                        "type": "string",
+                        "enum": ["ACTIVE", "CANCELED"]
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "value": {
+                        "type": "number"
+                    },
+                    "serviceValueList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ServiceValue"
+                        }
+                    }
+                }
+            },
+            "ServiceLink": {
+                "type": "object",
+                "properties": {
+                    "serviceLinkId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "linkedService": {
+                        "$ref": "#/components/schemas/ServiceDomain"
+                    },
+                    "relatedService": {
+                        "$ref": "#/components/schemas/ServiceDomain"
+                    },
+                    "relatedCategory": {
+                        "$ref": "#/components/schemas/Category"
+                    },
+                    "quantity": {
+                        "type": "number"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
                     }
                 }
             },
@@ -6082,6 +5487,40 @@
                     }
                 }
             },
+            "SchedulingServiceDomain": {
+                "type": "object",
+                "properties": {
+                    "schedulingServiceId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "scheduling": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "service": {
+                        "$ref": "#/components/schemas/ServiceDomain"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "value": {
+                        "type": "number"
+                    },
+                    "situationType": {
+                        "type": "string",
+                        "enum": ["ACTIVE", "CANCELED"]
+                    },
+                    "attendanceService": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "serviceValue": {
+                        "$ref": "#/components/schemas/ServiceValue"
+                    }
+                }
+            },
             "SchedulingDomainDto": {
                 "type": "object",
                 "properties": {
@@ -6105,6 +5544,54 @@
                         "items": {
                             "$ref": "#/components/schemas/SchedulingServiceDomainDto"
                         }
+                    }
+                }
+            },
+            "SchedulingDomain": {
+                "type": "object",
+                "properties": {
+                    "schedulingId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "establishment": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "beginIn": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endIn": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "attendantUser": {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "clientUser": {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "situationType": {
+                        "type": "string",
+                        "enum": ["PRE_SCHEDULED", "SCHEDULED", "REFUSED", "CANCELED"]
+                    },
+                    "observation": {
+                        "type": "string"
+                    },
+                    "publicReference": {
+                        "type": "string"
+                    },
+                    "totalServiceValue": {
+                        "type": "number"
+                    },
+                    "attendance": {
+                        "type": "string",
+                        "format": "uuid"
                     }
                 }
             },
@@ -6166,6 +5653,40 @@
                     }
                 }
             },
+            "AttendanceDomain": {
+                "type": "object",
+                "properties": {
+                    "attendanceId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "establishment": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "attendantUser": {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "clientUser": {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "paymentType": {
+                        "type": "string",
+                        "enum": ["MONEY", "CREDIT_CARD", "DEBIT_CARD", "PIX", "PIC_PAY"]
+                    },
+                    "situationType": {
+                        "type": "string",
+                        "enum": ["ACTIVE", "PARTIALLY_ANSWERED", "CONCLUDED", "ABSENT", "CANCELED"]
+                    },
+                    "observation": {
+                        "type": "string"
+                    }
+                }
+            },
             "AttendanceFinishDto": {
                 "type": "object",
                 "properties": {
@@ -6191,6 +5712,36 @@
                     }
                 }
             },
+            "AttendanceServiceDomain": {
+                "type": "object",
+                "properties": {
+                    "attendanceServiceId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "attendance": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "service": {
+                        "$ref": "#/components/schemas/ServiceDomain"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "quantity": {
+                        "type": "number"
+                    },
+                    "value": {
+                        "type": "number"
+                    },
+                    "situationType": {
+                        "type": "string",
+                        "enum": ["ACTIVE", "CANCELED"]
+                    }
+                }
+            },
             "WorkHourSchedExceptionDto": {
                 "type": "object",
                 "properties": {
@@ -6201,6 +5752,57 @@
                     "workHourId": {
                         "type": "string",
                         "format": "uuid"
+                    }
+                }
+            },
+            "WorkHourSched": {
+                "type": "object",
+                "properties": {
+                    "workHourId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "dayWeek": {
+                        "type": "string",
+                        "enum": ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]
+                    },
+                    "hour": {
+                        "$ref": "#/components/schemas/LocalTime"
+                    },
+                    "establishment": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "userEmployee": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "situationType": {
+                        "type": "string",
+                        "enum": ["ACTIVE", "CANCELED"]
+                    },
+                    "workHourSchedExceptions": {
+                        "$ref": "#/components/schemas/WorkHourSchedException"
+                    }
+                }
+            },
+            "WorkHourSchedException": {
+                "type": "object",
+                "properties": {
+                    "workHourSchedExceptionId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "dayException": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "workHourSched": {
+                        "$ref": "#/components/schemas/WorkHourSched"
                     }
                 }
             },
@@ -6218,6 +5820,42 @@
                     "establishmentId": {
                         "type": "string",
                         "format": "uuid"
+                    }
+                }
+            },
+            "Permission": {
+                "type": "object",
+                "properties": {
+                    "permissionKey": {
+                        "type": "string",
+                        "enum": ["ROLE_ADM", "ROLE_OWNER", "ROLE_EMPLOYEE", "ROLE_CLIENT", "ROLE_PRE_CLIENT"]
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UserPermission": {
+                "type": "object",
+                "properties": {
+                    "userPermissionId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "user": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "permission": {
+                        "$ref": "#/components/schemas/Permission"
+                    },
+                    "establishment": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
                     }
                 }
             },
@@ -6244,14 +5882,6 @@
                     "day": {
                         "type": "string",
                         "format": "date"
-                    },
-                    "userEmployee": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "establishment": {
-                        "type": "string",
-                        "format": "uuid"
                     }
                 }
             },
@@ -6265,6 +5895,25 @@
                     "serviceLinkedId": {
                         "type": "string",
                         "format": "uuid"
+                    }
+                }
+            },
+            "UserServiceDomain": {
+                "type": "object",
+                "properties": {
+                    "userServiceId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "user": {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "serviceLinked": {
+                        "$ref": "#/components/schemas/ServiceDomain"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
                     }
                 }
             },
@@ -6395,13 +6044,13 @@
             "PageUserEstablishment": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -6448,19 +6097,19 @@
                     "sort": {
                         "$ref": "#/components/schemas/SortObject"
                     },
-                    "paged": {
-                        "type": "boolean"
-                    },
-                    "unpaged": {
-                        "type": "boolean"
+                    "pageNumber": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "pageSize": {
                         "type": "integer",
                         "format": "int32"
                     },
-                    "pageNumber": {
-                        "type": "integer",
-                        "format": "int32"
+                    "unpaged": {
+                        "type": "boolean"
+                    },
+                    "paged": {
+                        "type": "boolean"
                     }
                 }
             },
@@ -6470,10 +6119,10 @@
                     "empty": {
                         "type": "boolean"
                     },
-                    "unsorted": {
+                    "sorted": {
                         "type": "boolean"
                     },
-                    "sorted": {
+                    "unsorted": {
                         "type": "boolean"
                     }
                 }
@@ -6484,13 +6133,13 @@
             "PageWorkHourSchedException": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -6533,13 +6182,13 @@
             "PageWorkDay": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -6579,25 +6228,25 @@
             "WorkDayUserProjection": {
                 "type": "object",
                 "properties": {
-                    "userEmployeeId": {
-                        "type": "string"
-                    },
-                    "workDayId": {
-                        "type": "string"
-                    },
                     "establishmentId": {
                         "type": "string"
                     },
                     "dayWeek": {
                         "type": "string"
                     },
-                    "startBreak": {
+                    "userEmployeeId": {
+                        "type": "string"
+                    },
+                    "workDayId": {
+                        "type": "string"
+                    },
+                    "startService": {
                         "type": "string"
                     },
                     "endService": {
                         "type": "string"
                     },
-                    "startService": {
+                    "startBreak": {
                         "type": "string"
                     },
                     "endBreak": {
@@ -6611,13 +6260,13 @@
             "PageUserPermission": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -6660,13 +6309,13 @@
             "PageMonthWorkDay": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -6730,13 +6379,13 @@
             "PageUserServiceDomain": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -6779,13 +6428,13 @@
             "PageUser": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -6828,13 +6477,13 @@
             "PageUserLock": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -6874,13 +6523,13 @@
             "PageWorkHourSchedInfo": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -6923,6 +6572,9 @@
                     "hour": {
                         "$ref": "#/components/schemas/LocalTime"
                     },
+                    "dayWeek": {
+                        "type": "string"
+                    },
                     "situationType": {
                         "type": "string",
                         "enum": ["ACTIVE", "CANCELED"]
@@ -6933,9 +6585,6 @@
                     "workHourSchedExceptionId": {
                         "type": "string"
                     },
-                    "dayWeek": {
-                        "type": "string"
-                    },
                     "isException": {
                         "type": "string"
                     }
@@ -6944,13 +6593,13 @@
             "PageUserProjection": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -6993,19 +6642,19 @@
                     "name": {
                         "type": "string"
                     },
-                    "situationType": {
-                        "type": "string"
-                    },
-                    "nickname": {
-                        "type": "string"
-                    },
                     "userId": {
+                        "type": "string"
+                    },
+                    "telephone": {
                         "type": "string"
                     },
                     "email": {
                         "type": "string"
                     },
-                    "telephone": {
+                    "situationType": {
+                        "type": "string"
+                    },
+                    "nickname": {
                         "type": "string"
                     }
                 }
@@ -7016,13 +6665,13 @@
             "PageServiceValue": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -7065,13 +6714,13 @@
             "PageServiceLink": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -7114,13 +6763,13 @@
             "PageServiceDomain": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -7166,13 +6815,13 @@
                     "value": {
                         "type": "number"
                     },
-                    "amountTime": {
-                        "type": "integer",
-                        "format": "int64"
-                    },
                     "serviceId": {
                         "type": "string",
                         "format": "uuid"
+                    },
+                    "amountTime": {
+                        "type": "integer",
+                        "format": "int64"
                     }
                 }
             },
@@ -7185,13 +6834,13 @@
             "PageCategory": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -7234,13 +6883,13 @@
             "PageSchedulingServiceDomain": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -7283,13 +6932,13 @@
             "PageSchedulingDomain": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -7372,13 +7021,13 @@
             "PageSchedulingDomainProjection": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -7451,13 +7100,13 @@
             "PageEstablishment": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -7503,13 +7152,13 @@
             "PageAttendanceDomain": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
@@ -7552,13 +7201,13 @@
             "PageAttendanceServiceDomain": {
                 "type": "object",
                 "properties": {
-                    "totalPages": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
                     "totalElements": {
                         "type": "integer",
                         "format": "int64"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32"
                     },
                     "size": {
                         "type": "integer",
