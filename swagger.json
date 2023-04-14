@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://af56-170-231-85-220.ngrok-free.app",
+      "url": "http://ec2-54-159-12-88.compute-1.amazonaws.com",
       "description": "Deploy"
     }
   ],
@@ -6106,17 +6106,30 @@
       "Address": {
         "type": "object",
         "properties": {
-          "addressId": { "type": "string", "format": "uuid" },
-          "cep": { "type": "string" },
-          "uf": { "type": "string" },
-          "city": { "type": "string" },
-          "district": { "type": "string" },
-          "road": { "type": "string" },
-          "number": { "type": "string" },
-          "complement": { "type": "string" },
-          "situationType": { "type": "string", "enum": ["ACTIVE", "CANCELED"] },
-          "createdAt": { "type": "string", "format": "date-time" }
-        }
+          "addressId": {
+            "type": "string",
+            "description": "Primary key",
+            "format": "uuid"
+          },
+          "cep": { "type": "string", "description": "CEP" },
+          "uf": { "type": "string", "description": "UF" },
+          "city": { "type": "string", "description": "City" },
+          "district": { "type": "string", "description": "District" },
+          "road": { "type": "string", "description": "Road" },
+          "number": { "type": "string", "description": "Number" },
+          "complement": { "type": "string", "description": "Complement" },
+          "situationType": {
+            "type": "string",
+            "description": "Situation type",
+            "enum": ["ACTIVE", "CANCELED"]
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Created at",
+            "format": "date-time"
+          }
+        },
+        "description": "User or establishment address"
       },
       "Establishment": {
         "type": "object",
@@ -6132,7 +6145,8 @@
           "establishmentConfig": {
             "$ref": "#/components/schemas/EstablishmentConfig"
           }
-        }
+        },
+        "description": "Establishment"
       },
       "EstablishmentConfig": {
         "required": ["defaultInterval"],
@@ -6143,7 +6157,8 @@
           "incrementKey": { "type": "string" },
           "amountMissingToBlock": { "type": "integer", "format": "int64" },
           "establishment": { "$ref": "#/components/schemas/Establishment" }
-        }
+        },
+        "description": "Establishment config"
       },
       "User": {
         "type": "object",
@@ -6158,7 +6173,8 @@
           "createdAt": { "type": "string", "format": "date-time" },
           "userIsBloqued": { "type": "boolean" },
           "address": { "type": "string", "format": "uuid" }
-        }
+        },
+        "description": "User"
       },
       "UserEstablishment": {
         "required": [
@@ -6176,7 +6192,8 @@
           "linkedUser": { "$ref": "#/components/schemas/User" },
           "createdAt": { "type": "string", "format": "date-time" },
           "nickname": { "type": "string" }
-        }
+        },
+        "description": "Link between user and establishment"
       },
       "WaAccountDto": {
         "type": "object",
@@ -6202,7 +6219,8 @@
             "enum": ["NOT_VERIFIED", "VERIFIED"]
           },
           "user": { "$ref": "#/components/schemas/User" }
-        }
+        },
+        "description": "User telephone"
       },
       "WaAccount": {
         "required": ["accountType", "phoneNumberId", "situationType", "wabaId"],
@@ -6228,7 +6246,8 @@
             "minLength": 0,
             "type": "string"
           }
-        }
+        },
+        "description": "Client whatsApp account"
       },
       "LocalTime": {
         "type": "object",
@@ -6750,7 +6769,7 @@
           },
           "orderDay": { "type": "integer", "format": "int64" }
         },
-        "description": "Week day"
+        "description": "Days of week table"
       },
       "WorkDay": {
         "type": "object",
@@ -7304,7 +7323,8 @@
           },
           "unlockUser": { "$ref": "#/components/schemas/User" },
           "unlockAt": { "type": "string", "format": "date-time" }
-        }
+        },
+        "description": "Blocking to prevent the user from making new appointments at a given establishment"
       },
       "ServiceValueDto": {
         "type": "object",
@@ -7322,7 +7342,8 @@
           "value": { "type": "number" },
           "situationType": { "type": "string", "enum": ["ACTIVE", "CANCELED"] },
           "createdAt": { "type": "string", "format": "date-time" }
-        }
+        },
+        "description": "Values of a service"
       },
       "ServiceLinkDto": {
         "type": "object",
@@ -7340,7 +7361,8 @@
           "situationType": { "type": "string", "enum": ["ACTIVE", "CANCELED"] },
           "establishment": { "type": "string", "format": "uuid" },
           "createdAt": { "type": "string", "format": "date-time" }
-        }
+        },
+        "description": "Category of the services of an establishment"
       },
       "ServiceDomain": {
         "type": "object",
@@ -7357,7 +7379,8 @@
             "type": "array",
             "items": { "$ref": "#/components/schemas/ServiceValue" }
           }
-        }
+        },
+        "description": "Services of an establishment"
       },
       "ServiceLink": {
         "type": "object",
@@ -7368,7 +7391,8 @@
           "relatedCategory": { "$ref": "#/components/schemas/Category" },
           "quantity": { "type": "number" },
           "createdAt": { "type": "string", "format": "date-time" }
-        }
+        },
+        "description": "Links between services"
       },
       "ServiceDomainDto": {
         "type": "object",
@@ -7401,7 +7425,8 @@
           "situationType": { "type": "string", "enum": ["ACTIVE", "CANCELED"] },
           "attendanceService": { "type": "string", "format": "uuid" },
           "serviceValue": { "$ref": "#/components/schemas/ServiceValue" }
-        }
+        },
+        "description": "Services of an appointment"
       },
       "SchedulingDomainDto": {
         "type": "object",
@@ -7436,7 +7461,8 @@
           "publicReference": { "type": "string" },
           "totalServiceValue": { "type": "number" },
           "attendance": { "type": "string", "format": "uuid" }
-        }
+        },
+        "description": "Scheduling of services of an establishment"
       },
       "EstablishmentConfigDto": {
         "type": "object",
@@ -8480,7 +8506,8 @@
             ]
           },
           "observation": { "type": "string" }
-        }
+        },
+        "description": "Attendance of services that can be generated from one or more scheduling"
       },
       "AttendanceFinishDto": {
         "type": "object",
@@ -8506,7 +8533,8 @@
           "quantity": { "type": "number" },
           "value": { "type": "number" },
           "situationType": { "type": "string", "enum": ["ACTIVE", "CANCELED"] }
-        }
+        },
+        "description": "Services of an attendance generated from a scheduling service"
       },
       "WhatsappWebhookValidationDto": {
         "required": ["awsRequestId", "challenge", "hubMode", "token"],
@@ -8904,7 +8932,8 @@
           "workHourSchedExceptions": {
             "$ref": "#/components/schemas/WorkHourSchedException"
           }
-        }
+        },
+        "description": "Establishment hours, for an employee, that can be made service scheduling"
       },
       "WorkHourSchedException": {
         "type": "object",
@@ -9151,7 +9180,8 @@
               "nano": { "type": "integer", "format": "int32" }
             }
           }
-        }
+        },
+        "description": "Time at an employee's establishment that will be blocked for scheduling"
       },
       "UserPermissionDto": {
         "type": "object",
@@ -9184,7 +9214,8 @@
             ]
           },
           "description": { "type": "string" }
-        }
+        },
+        "description": "User permissions"
       },
       "UserPermission": {
         "type": "object",
@@ -9194,7 +9225,8 @@
           "permission": { "$ref": "#/components/schemas/Permission" },
           "establishment": { "type": "string", "format": "uuid" },
           "createdAt": { "type": "string", "format": "date-time" }
-        }
+        },
+        "description": "User permissions on an establishment"
       },
       "MonthWorkDayDto": {
         "type": "object",
@@ -9208,7 +9240,8 @@
         "properties": {
           "monthWorkDayId": { "type": "string", "format": "uuid" },
           "day": { "type": "string", "format": "date" }
-        }
+        },
+        "description": "Day of the month that the employee will work"
       },
       "UserServiceDomainDto": {
         "type": "object",
@@ -9224,7 +9257,8 @@
           "user": { "$ref": "#/components/schemas/User" },
           "serviceLinked": { "$ref": "#/components/schemas/ServiceDomain" },
           "createdAt": { "type": "string", "format": "date-time" }
-        }
+        },
+        "description": "Services that a user performs in an establishment"
       },
       "UserTelephoneDto": {
         "type": "object",
