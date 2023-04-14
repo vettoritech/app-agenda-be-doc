@@ -5,6 +5,7 @@ window.onload = function() {
   window.ui = SwaggerUIBundle({
     url: "swagger.json",
     dom_id: '#swagger-ui',
+    enableCORS: false,
     deepLinking: true,
     presets: [
       SwaggerUIBundle.presets.apis,
