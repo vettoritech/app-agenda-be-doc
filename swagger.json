@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://ec2-54-159-12-88.compute-1.amazonaws.com",
+      "url": "https://cea9-170-231-85-220.ngrok-free.app",
       "description": "Deploy"
     }
   ],
