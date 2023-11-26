@@ -317,6 +317,214 @@
         }
       }
     },
+    "/api/wa/{establishmentId}/account/msg/list/{waMsgListAccountId}": {
+      "get": {
+        "tags": ["Whatsapp Msg List Account"],
+        "summary": "Return a unique whatsapp msg list account",
+        "operationId": "findById_3",
+        "parameters": [
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "waMsgListAccountId",
+            "in": "path",
+            "description": "Whatsapp msg list account id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Whatsapp msg list account found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgListAccount" }
+              }
+            }
+          },
+          "404": {
+            "description": "Whatsapp msg list account not found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgListAccount" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Whatsapp Msg List Account"],
+        "summary": "Update an existing whatsapp msg list account",
+        "operationId": "update_2",
+        "parameters": [
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "waMsgListAccountId",
+            "in": "path",
+            "description": "Whatsapp msg list account id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/WaMsgListAccountDto" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Whatsapp msg list account updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgListAccount" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Whatsapp Msg List Account"],
+        "summary": "Delete an existing whatsapp msg list account",
+        "operationId": "delete_1",
+        "parameters": [
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "waMsgListAccountId",
+            "in": "path",
+            "description": "Whatsapp msg list account id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Whatsapp msg list account deleted" }
+        }
+      }
+    },
+    "/api/wa/{establishmentId}/account/msg/button/{waMsgButtonAccountId}": {
+      "get": {
+        "tags": ["Whatsapp Msg Button Account"],
+        "summary": "Return a unique whatsapp msg button account",
+        "operationId": "findById_5",
+        "parameters": [
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "waMsgButtonAccountId",
+            "in": "path",
+            "description": "Whatsapp msg button account id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Whatsapp msg button account found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgButtonAccount" }
+              }
+            }
+          },
+          "404": {
+            "description": "Whatsapp msg button account not found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgButtonAccount" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Whatsapp Msg Button Account"],
+        "summary": "Update an existing whatsapp msg button account",
+        "operationId": "update_3",
+        "parameters": [
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "waMsgButtonAccountId",
+            "in": "path",
+            "description": "Whatsapp msg button account id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/WaMsgButtonAccountDto" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Whatsapp msg button account updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgButtonAccount" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Whatsapp Msg Button Account"],
+        "summary": "Delete an existing whatsapp msg button account",
+        "operationId": "delete_2",
+        "parameters": [
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "waMsgButtonAccountId",
+            "in": "path",
+            "description": "Whatsapp msg button account id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Whatsapp msg button account deleted" }
+        }
+      }
+    },
     "/api/user/{userId}/{establishmentId}/workDay/{workDayId}": {
       "get": {
         "tags": ["Workday"],
@@ -526,7 +734,7 @@
       "get": {
         "tags": ["User"],
         "summary": "Return a unique user",
-        "operationId": "findById_3",
+        "operationId": "findById_11",
         "parameters": [
           {
             "name": "establishmentId",
@@ -565,7 +773,7 @@
       "put": {
         "tags": ["User"],
         "summary": "Update an existing user",
-        "operationId": "update_2",
+        "operationId": "update_4",
         "parameters": [
           {
             "name": "establishmentId",
@@ -944,7 +1152,7 @@
       "get": {
         "tags": ["Service"],
         "summary": "Return a unique service",
-        "operationId": "findById_6",
+        "operationId": "findById_14",
         "parameters": [
           {
             "name": "establishmentId",
@@ -983,7 +1191,7 @@
       "put": {
         "tags": ["Service"],
         "summary": "Update an existing service",
-        "operationId": "update_3",
+        "operationId": "update_5",
         "parameters": [
           {
             "name": "establishmentId",
@@ -1139,7 +1347,7 @@
       "get": {
         "tags": ["Scheduling Service"],
         "summary": "Return a unique schedule service",
-        "operationId": "findById_7",
+        "operationId": "findById_15",
         "parameters": [
           {
             "name": "schedulingId",
@@ -1182,7 +1390,7 @@
       "put": {
         "tags": ["Scheduling Service"],
         "summary": "Update a service of a scheduling",
-        "operationId": "update_4",
+        "operationId": "update_6",
         "parameters": [
           {
             "name": "schedulingId",
@@ -1273,7 +1481,7 @@
       "get": {
         "tags": ["Scheduling"],
         "summary": "Return a unique schedule",
-        "operationId": "findById_8",
+        "operationId": "findById_16",
         "parameters": [
           {
             "name": "establishmentId",
@@ -1312,7 +1520,7 @@
       "put": {
         "tags": ["Scheduling"],
         "summary": "Update an existing scheduling",
-        "operationId": "update_5",
+        "operationId": "update_7",
         "parameters": [
           {
             "name": "establishmentId",
@@ -1465,7 +1673,7 @@
       "get": {
         "tags": ["Establishment"],
         "summary": "Return a unique establishment",
-        "operationId": "findById_9",
+        "operationId": "findById_17",
         "parameters": [
           {
             "name": "establishmentId",
@@ -1497,7 +1705,7 @@
       "put": {
         "tags": ["Establishment"],
         "summary": "Update an existing establishment",
-        "operationId": "update_6",
+        "operationId": "update_8",
         "parameters": [
           {
             "name": "establishmentId",
@@ -1532,7 +1740,7 @@
       "get": {
         "tags": ["Work Day Default"],
         "summary": "Return an unique work day default",
-        "operationId": "findById_10",
+        "operationId": "findById_18",
         "parameters": [
           {
             "name": "establishmentId",
@@ -1563,7 +1771,7 @@
       "put": {
         "tags": ["Work Day Default"],
         "summary": "Update an existing default workday into establishment",
-        "operationId": "update_7",
+        "operationId": "update_9",
         "parameters": [
           {
             "name": "establishmentId",
@@ -1603,7 +1811,7 @@
       "delete": {
         "tags": ["Work Day Default"],
         "summary": "Delete an existing default workday into establishment",
-        "operationId": "delete_2",
+        "operationId": "delete_4",
         "parameters": [
           {
             "name": "establishmentId",
@@ -1800,7 +2008,7 @@
       "get": {
         "tags": ["Attendance"],
         "summary": "Return a unique attendance",
-        "operationId": "findById_11",
+        "operationId": "findById_19",
         "parameters": [
           {
             "name": "establishmentId",
@@ -1839,7 +2047,7 @@
       "put": {
         "tags": ["Attendance"],
         "summary": "Update an existing attendance",
-        "operationId": "update_8",
+        "operationId": "update_10",
         "parameters": [
           {
             "name": "establishmentId",
@@ -2352,6 +2560,74 @@
         }
       }
     },
+    "/api/wa/{establishmentId}/account/msg/model/binding/{waMsgModelId}": {
+      "post": {
+        "tags": ["Wa Msg Model Account"],
+        "summary": "Binding model message with establishment account",
+        "operationId": "bindingMsgToAccount",
+        "parameters": [
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "waMsgModelId",
+            "in": "path",
+            "description": "Wa Msg Model Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgModelAccount" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/{establishmentId}/account/msg/interactive/binding/{waMsgInteractiveId}": {
+      "post": {
+        "tags": ["Wa Msg Interactive Account"],
+        "summary": "Binding interactive message with establishment account",
+        "operationId": "bindingMsgToAccount_1",
+        "parameters": [
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "waMsgInteractiveId",
+            "in": "path",
+            "description": "Wa Msg Interactive Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WaMsgInteractiveAccount"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/user/{userId}/{establishmentId}/workHourSchedException": {
       "get": {
         "tags": ["Work Hour Schedule Exception"],
@@ -2722,7 +2998,7 @@
       "get": {
         "tags": ["Month Work Day"],
         "summary": "Return a list of month work day",
-        "operationId": "findList_2",
+        "operationId": "findList_10",
         "parameters": [
           {
             "name": "monthWorkDayId",
@@ -3181,7 +3457,7 @@
       "get": {
         "tags": ["User Telephone"],
         "summary": "Return a list of user telephone",
-        "operationId": "findList_4",
+        "operationId": "findList_12",
         "parameters": [
           {
             "name": "userTelephoneId",
@@ -3297,7 +3573,7 @@
       "get": {
         "tags": ["User Lock"],
         "summary": "Return a list of user lock by establishment",
-        "operationId": "findList_5",
+        "operationId": "findList_13",
         "parameters": [
           {
             "name": "userLockId",
@@ -3464,7 +3740,7 @@
       "get": {
         "tags": ["User"],
         "summary": "Return a list of users",
-        "operationId": "findList_3",
+        "operationId": "findList_11",
         "parameters": [
           { "name": "userId", "in": "query", "description": "User Id (Equal)" },
           {
@@ -3745,7 +4021,7 @@
       "get": {
         "tags": ["Service"],
         "summary": "Return a list of services",
-        "operationId": "findList_6",
+        "operationId": "findList_14",
         "parameters": [
           {
             "name": "serviceId",
@@ -3937,7 +4213,7 @@
       "get": {
         "tags": ["Scheduling Service"],
         "summary": "Return a list of services of a schedules",
-        "operationId": "findList_7",
+        "operationId": "findList_15",
         "parameters": [
           {
             "name": "schedulingServiceId",
@@ -4044,7 +4320,7 @@
       "get": {
         "tags": ["Scheduling"],
         "summary": "Return a list of Schedules",
-        "operationId": "findList_8",
+        "operationId": "findList_16",
         "parameters": [
           {
             "name": "schedulingId",
@@ -4237,7 +4513,7 @@
       "get": {
         "tags": ["Establishment"],
         "summary": "Return a list of establishments",
-        "operationId": "findList_9",
+        "operationId": "findList_17",
         "parameters": [
           {
             "name": "establishmentId",
@@ -4337,7 +4613,7 @@
       "get": {
         "tags": ["Work Day Default"],
         "summary": "Return a list of work day default of establishment",
-        "operationId": "findList_10",
+        "operationId": "findList_18",
         "parameters": [
           {
             "name": "establishmentId",
@@ -4468,7 +4744,7 @@
       "get": {
         "tags": ["Attendance"],
         "summary": "Return a list of attendance",
-        "operationId": "findList_11",
+        "operationId": "findList_19",
         "parameters": [
           {
             "name": "attendanceId",
@@ -4695,6 +4971,711 @@
         }
       }
     },
+    "/api/wa/{establishmentId}/account/msg/model": {
+      "get": {
+        "tags": ["Wa Msg Model Account"],
+        "summary": "Return a list of wa msg model account",
+        "operationId": "findList_2",
+        "parameters": [
+          {
+            "name": "waMsgModelAccountId",
+            "in": "query",
+            "description": "Wa Msg Model Account Id (Equal)"
+          },
+          {
+            "name": "waMsgModelId",
+            "in": "query",
+            "description": "Wa Msg Model Id (Equal)"
+          },
+          {
+            "name": "waAccountId",
+            "in": "query",
+            "description": "Wa Account Id (Equal)"
+          },
+          {
+            "name": "situationType",
+            "in": "query",
+            "description": "Situation Type (In)",
+            "schema": { "type": "string", "enum": ["ACTIVE", "CANCELLED"] }
+          },
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "required": false,
+            "schema": { "minimum": 0, "type": "integer", "default": 0 }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "required": false,
+            "schema": { "minimum": 1, "type": "integer", "default": 20 }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "required": false,
+            "schema": { "type": "array", "items": { "type": "string" } }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Found zero or more results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageWaMsgModelAccount"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/{establishmentId}/account/msg/model/{waMsgModelAccountId}": {
+      "get": {
+        "tags": ["Wa Msg Model Account"],
+        "summary": "Return an unique wa msg model account",
+        "operationId": "findById_2",
+        "parameters": [
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "waMsgModelAccountId",
+            "in": "path",
+            "description": "Wa Msg Model Account Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgModelAccount" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/{establishmentId}/account/msg/list": {
+      "get": {
+        "tags": ["Whatsapp Msg List Account"],
+        "summary": "Return a list of whatsapp msg list account",
+        "operationId": "findList_3",
+        "parameters": [
+          {
+            "name": "waMsgModelAccountId",
+            "in": "query",
+            "description": "Whatsapp Msg Model Account Id (Equal)"
+          },
+          {
+            "name": "waMsgModelId",
+            "in": "query",
+            "description": "Whatsapp msg model id (Equal)"
+          },
+          {
+            "name": "waAccountId",
+            "in": "query",
+            "description": "Whatsapp Account Id (LikeIgnoreCase)"
+          },
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "required": false,
+            "schema": { "minimum": 0, "type": "integer", "default": 0 }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "required": false,
+            "schema": { "minimum": 1, "type": "integer", "default": 20 }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "required": false,
+            "schema": { "type": "array", "items": { "type": "string" } }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Found zero or more results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageWaMsgListAccount"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/{establishmentId}/account/msg/interactive": {
+      "get": {
+        "tags": ["Wa Msg Interactive Account"],
+        "summary": "Return a list of wa msg interactive account",
+        "operationId": "findList_4",
+        "parameters": [
+          {
+            "name": "waMsgInteractiveAccountId",
+            "in": "query",
+            "description": "Wa Msg Interactive Account Id (Equal)"
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "Title (LikeIgnoreCase)"
+          },
+          {
+            "name": "waAccountId",
+            "in": "query",
+            "description": "Wa Account Id (Equal)"
+          },
+          {
+            "name": "situationType",
+            "in": "query",
+            "description": "Situation Type (In)",
+            "schema": { "type": "string", "enum": ["ACTIVE", "CANCELLED"] }
+          },
+          {
+            "name": "isDefaultType",
+            "in": "query",
+            "description": "Is Default Type (In)",
+            "schema": { "type": "string", "enum": ["YES", "NO"] }
+          },
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "required": false,
+            "schema": { "minimum": 0, "type": "integer", "default": 0 }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "required": false,
+            "schema": { "minimum": 1, "type": "integer", "default": 20 }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "required": false,
+            "schema": { "type": "array", "items": { "type": "string" } }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Found zero or more results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageWaMsgInteractiveAccount"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/{establishmentId}/account/msg/interactive/{waMsgInteractiveAccountId}": {
+      "get": {
+        "tags": ["Wa Msg Interactive Account"],
+        "summary": "Return an unique wa msg interactive account",
+        "operationId": "findById_4",
+        "parameters": [
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "waMsgInteractiveAccountId",
+            "in": "path",
+            "description": "Wa Msg Interactive Account Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WaMsgInteractiveAccount"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/{establishmentId}/account/msg/button": {
+      "get": {
+        "tags": ["Whatsapp Msg Button Account"],
+        "summary": "Return a list of whatsapp msg button account",
+        "operationId": "findList_5",
+        "parameters": [
+          {
+            "name": "waMsgModelAccountId",
+            "in": "query",
+            "description": "Whatsapp Msg Model Account Id (Equal)"
+          },
+          {
+            "name": "waMsgModelId",
+            "in": "query",
+            "description": "Whatsapp msg model id (Equal)"
+          },
+          {
+            "name": "waAccountId",
+            "in": "query",
+            "description": "Whatsapp Account Id (LikeIgnoreCase)"
+          },
+          {
+            "name": "establishmentId",
+            "in": "path",
+            "description": "Establishment Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "required": false,
+            "schema": { "minimum": 0, "type": "integer", "default": 0 }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "required": false,
+            "schema": { "minimum": 1, "type": "integer", "default": 20 }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "required": false,
+            "schema": { "type": "array", "items": { "type": "string" } }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Found zero or more results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageWaMsgButtonAccount"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/msg/model": {
+      "get": {
+        "tags": ["Wa Msg Model"],
+        "summary": "Return a list of wa msg interactive",
+        "operationId": "findList_6",
+        "parameters": [
+          {
+            "name": "waMsgModelId",
+            "in": "query",
+            "description": "Wa Msg Model Id (Equal)"
+          },
+          {
+            "name": "waAccountId",
+            "in": "query",
+            "description": "Wa Account Id (Equal)"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Name (LikeIgnoreCase)"
+          },
+          {
+            "name": "finality",
+            "in": "query",
+            "description": "Finality (In)",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ACCOUNT_CONFIRMATION",
+                "SCHEDULING_CONFIRMATION",
+                "STARTED_BY_USER"
+              ]
+            }
+          },
+          {
+            "name": "situationType",
+            "in": "query",
+            "description": "Situation Type (In)",
+            "schema": {
+              "type": "string",
+              "enum": ["ACTIVE", "BLOCKED", "CANCELED"]
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "required": false,
+            "schema": { "minimum": 0, "type": "integer", "default": 0 }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "required": false,
+            "schema": { "minimum": 1, "type": "integer", "default": 20 }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "required": false,
+            "schema": { "type": "array", "items": { "type": "string" } }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Found zero or more results",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/PageWaMsgModel" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/msg/model/{waMsgModelId}": {
+      "get": {
+        "tags": ["Wa Msg Model"],
+        "summary": "Return an unique wa msg interactive",
+        "operationId": "findById_6",
+        "parameters": [
+          {
+            "name": "waMsgModelId",
+            "in": "path",
+            "description": "Wa Msg Model Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgModel" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/msg/list": {
+      "get": {
+        "tags": ["Whatsapp Msg List"],
+        "summary": "Return a list of message list",
+        "operationId": "findList_7",
+        "parameters": [
+          {
+            "name": "waMsgListId",
+            "in": "query",
+            "description": "Whatsapp Msg List Id (Equal)"
+          },
+          {
+            "name": "uniqueId",
+            "in": "query",
+            "description": "Unique Id (LikeIgnoreCase)"
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "Title (LikeIgnoreCase)"
+          },
+          {
+            "name": "grouper",
+            "in": "query",
+            "description": "Grouper (LikeIgnoreCase)"
+          },
+          {
+            "name": "buttonText",
+            "in": "query",
+            "description": "Button Text (LikeIgnoreCase)"
+          },
+          {
+            "name": "waMsgInteractiveId",
+            "in": "query",
+            "description": "Wa Msg Interactive Id (Equal)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Found zero or more results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/WaMsgList" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/msg/list/{waMsgListId}": {
+      "get": {
+        "tags": ["Whatsapp Msg List"],
+        "summary": "Return an unique message list",
+        "operationId": "findById_7",
+        "parameters": [
+          {
+            "name": "waMsgListId",
+            "in": "path",
+            "description": "Whatsapp Msg Button Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgList" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/msg/interactive": {
+      "get": {
+        "tags": ["Wa Msg Interactive"],
+        "summary": "Return a list of wa msg interactive",
+        "operationId": "findList_8",
+        "parameters": [
+          {
+            "name": "waMsgInteractiveId",
+            "in": "query",
+            "description": "Wa Msg Interactive Id (Equal)"
+          },
+          {
+            "name": "defaultTitle",
+            "in": "query",
+            "description": "Default Title (LikeIgnoreCase)"
+          },
+          {
+            "name": "defaultBody",
+            "in": "query",
+            "description": "Default Body (LikeIgnoreCase)"
+          },
+          {
+            "name": "defaultFooter",
+            "in": "query",
+            "description": "Default Footer (LikeIgnoreCase)"
+          },
+          {
+            "name": "queueName",
+            "in": "query",
+            "description": "Queue Name (LikeIgnoreCase)"
+          },
+          {
+            "name": "interactiveType",
+            "in": "query",
+            "description": "Interactive Type (In)",
+            "schema": {
+              "type": "string",
+              "enum": ["TEXT", "BUTTON", "LIST", "PRODUCT", "PRODUCT_LIST"]
+            }
+          },
+          {
+            "name": "situationType",
+            "in": "query",
+            "description": "Situation Type (In)",
+            "schema": { "type": "string", "enum": ["ACTIVE", "CANCELLED"] }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "required": false,
+            "schema": { "minimum": 0, "type": "integer", "default": 0 }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "required": false,
+            "schema": { "minimum": 1, "type": "integer", "default": 20 }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "required": false,
+            "schema": { "type": "array", "items": { "type": "string" } }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Found zero or more results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageWaMsgInteractive"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/msg/interactive/{waMsgInteractiveId}": {
+      "get": {
+        "tags": ["Wa Msg Interactive"],
+        "summary": "Return an unique wa msg interactive",
+        "operationId": "findById_8",
+        "parameters": [
+          {
+            "name": "waMsgInteractiveId",
+            "in": "path",
+            "description": "Wa Msg Interactive Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgInteractive" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/msg/button": {
+      "get": {
+        "tags": ["Whatsapp Msg Button"],
+        "summary": "Return a list of message button",
+        "operationId": "findList_9",
+        "parameters": [
+          {
+            "name": "waMsgButtonId",
+            "in": "query",
+            "description": "Whatsapp Msg Button Id (Equal)"
+          },
+          {
+            "name": "uniqueId",
+            "in": "query",
+            "description": "Unique Id (LikeIgnoreCase)"
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "Title (LikeIgnoreCase)"
+          },
+          {
+            "name": "buttonType",
+            "in": "query",
+            "description": "Button Type (In)",
+            "schema": { "type": "string", "enum": ["REPLY"] }
+          },
+          {
+            "name": "waMsgInteractiveId",
+            "in": "query",
+            "description": "Wa Msg Interactive Id (Equal)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Found zero or more results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/WaMsgButton" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wa/msg/button/{waMsgButtonId}": {
+      "get": {
+        "tags": ["Whatsapp Msg Button"],
+        "summary": "Return an unique message button",
+        "operationId": "findById_9",
+        "parameters": [
+          {
+            "name": "waMsgButtonId",
+            "in": "path",
+            "description": "Whatsapp Msg Button Id",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaMsgButton" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/user/{userId}/{establishmentId}/workHourSchedException/{workHourSchedExceptionId}": {
       "get": {
         "tags": ["Work Hour Schedule Exception"],
@@ -4897,7 +5878,7 @@
       "get": {
         "tags": ["Month Work Day"],
         "summary": "Return a unique month work day",
-        "operationId": "findById_2",
+        "operationId": "findById_10",
         "parameters": [
           {
             "name": "userId",
@@ -4943,7 +5924,7 @@
       "delete": {
         "tags": ["Month Work Day"],
         "summary": "Delete an existing month work day",
-        "operationId": "delete_1",
+        "operationId": "delete_3",
         "parameters": [
           {
             "name": "userId",
@@ -5037,7 +6018,7 @@
       "get": {
         "tags": ["User Telephone"],
         "summary": "Return an unique user telephone",
-        "operationId": "findById_4",
+        "operationId": "findById_12",
         "parameters": [
           {
             "name": "userId",
@@ -5085,7 +6066,7 @@
       "get": {
         "tags": ["User Lock"],
         "summary": "Return an unique user lock",
-        "operationId": "findById_5",
+        "operationId": "findById_13",
         "parameters": [
           {
             "name": "userId",
@@ -6155,7 +7136,7 @@
           "establishmentConfigId": { "type": "string", "format": "uuid" },
           "defaultInterval": { "type": "integer", "format": "int64" },
           "incrementKey": { "type": "string" },
-          "amountMissingToBlock": { "type": "integer", "format": "int64" },
+          "amountMissingToBlock": { "type": "integer", "format": "int32" },
           "establishment": { "$ref": "#/components/schemas/Establishment" }
         },
         "description": "Establishment config"
@@ -6201,7 +7182,6 @@
           "waToken": { "type": "string" },
           "wabaId": { "type": "string" },
           "phoneNumberId": { "type": "string" },
-          "accountType": { "type": "string", "enum": ["ADM", "CLIENT"] },
           "userTelephoneId": { "type": "string", "format": "uuid" },
           "userId": { "type": "string", "format": "uuid" },
           "telephone": { "type": "string" }
@@ -6249,6 +7229,44 @@
         },
         "description": "Client whatsApp account"
       },
+      "WaMsgListAccountDto": {
+        "type": "object",
+        "properties": {
+          "buttonText": { "type": "string" },
+          "title": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      },
+      "WaMsgListAccount": {
+        "required": ["buttonText", "description", "title", "waMsgList"],
+        "type": "object",
+        "properties": {
+          "waMsgListAccountId": { "type": "string", "format": "uuid" },
+          "waMsgList": { "type": "string", "format": "uuid" },
+          "waMsgInteractiveAccount": { "type": "string", "format": "uuid" },
+          "waMsgModelAccount": { "type": "string", "format": "uuid" },
+          "buttonText": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "title": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "description": { "maxLength": 1024, "minLength": 0, "type": "string" }
+        },
+        "description": "List of accounts for sending messages in whatsapp"
+      },
+      "WaMsgButtonAccountDto": {
+        "type": "object",
+        "properties": { "title": { "type": "string" } }
+      },
+      "WaMsgButtonAccount": {
+        "required": ["waMsgButton"],
+        "type": "object",
+        "properties": {
+          "waMsgButtonAccountId": { "type": "string", "format": "uuid" },
+          "waMsgButton": { "type": "string", "format": "uuid" },
+          "waMsgInteractiveAccount": { "type": "string", "format": "uuid" },
+          "waMsgModelAccount": { "type": "string", "format": "uuid" },
+          "title": { "maxLength": 90, "minLength": 0, "type": "string" }
+        },
+        "description": "From the base buttons, it links with the establishment and allows customization"
+      },
       "LocalTime": {
         "type": "object",
         "properties": {
@@ -6290,6 +7308,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -6324,12 +7347,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -6409,6 +7427,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -6443,12 +7466,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -6528,6 +7546,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -6562,12 +7585,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -6647,6 +7665,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -6681,12 +7704,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -6767,7 +7785,7 @@
               "SATURDAY"
             ]
           },
-          "orderDay": { "type": "integer", "format": "int64" }
+          "orderDay": { "type": "integer", "format": "int32" }
         },
         "description": "Days of week table"
       },
@@ -6797,6 +7815,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -6831,12 +7854,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -6917,6 +7935,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -6951,12 +7974,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -7037,6 +8055,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -7071,12 +8094,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -7157,6 +8175,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -7191,12 +8214,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -7468,7 +8486,7 @@
         "type": "object",
         "properties": {
           "defaultInterval": { "type": "integer", "format": "int64" },
-          "amountMissingToBlock": { "type": "integer", "format": "int64" }
+          "amountMissingToBlock": { "type": "integer", "format": "int32" }
         }
       },
       "EstablishmentDto": {
@@ -7516,6 +8534,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -7550,12 +8573,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -7635,6 +8653,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -7669,12 +8692,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -7754,6 +8772,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -7788,12 +8811,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -7873,6 +8891,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -7907,12 +8930,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -8003,6 +9021,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -8037,12 +9060,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -8123,6 +9141,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -8157,12 +9180,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -8243,6 +9261,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -8277,12 +9300,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -8363,6 +9381,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -8397,12 +9420,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -8546,6 +9564,41 @@
           "awsRequestId": { "type": "string" }
         }
       },
+      "WaMsgModelAccount": {
+        "required": ["situationType", "waAccount", "waMsgModel"],
+        "type": "object",
+        "properties": {
+          "waMsgModelAccountId": { "type": "string", "format": "uuid" },
+          "waMsgModel": { "type": "string", "format": "uuid" },
+          "waAccount": { "type": "string", "format": "uuid" },
+          "situationType": { "type": "string", "enum": ["ACTIVE", "CANCELLED"] }
+        },
+        "description": "Message template link with establishment"
+      },
+      "WaMsgInteractiveAccount": {
+        "required": [
+          "body",
+          "isDefaultType",
+          "situationType",
+          "waAccount",
+          "waMsgInteractive"
+        ],
+        "type": "object",
+        "properties": {
+          "waMsgInteractiveAccountId": { "type": "string", "format": "uuid" },
+          "title": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "body": { "maxLength": 1024, "minLength": 0, "type": "string" },
+          "footer": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "waMsgInteractive": { "type": "string", "format": "uuid" },
+          "waAccount": { "type": "string", "format": "uuid" },
+          "situationType": {
+            "type": "string",
+            "enum": ["ACTIVE", "CANCELLED"]
+          },
+          "isDefaultType": { "type": "string", "enum": ["YES", "NO"] }
+        },
+        "description": "Linking interactive messages with establishment, allowing customizations"
+      },
       "WorkHourSchedExceptionDto": {
         "type": "object",
         "properties": {
@@ -8568,6 +9621,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -8602,12 +9660,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -8687,6 +9740,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -8721,12 +9779,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -8824,6 +9877,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -8858,12 +9916,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -8959,6 +10012,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -8993,12 +10051,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -9078,6 +10131,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -9112,12 +10170,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -9309,7 +10362,8 @@
           },
           "defaultEstablishment": {
             "$ref": "#/components/schemas/Establishment"
-          }
+          },
+          "waAccount": { "$ref": "#/components/schemas/WaAccount" }
         }
       },
       "PageUserEstablishment": {
@@ -9317,6 +10371,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9324,9 +10381,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9334,10 +10388,10 @@
       "PageableObject": {
         "type": "object",
         "properties": {
-          "offset": { "type": "integer", "format": "int64" },
-          "sort": { "$ref": "#/components/schemas/SortObject" },
           "pageNumber": { "type": "integer", "format": "int32" },
           "pageSize": { "type": "integer", "format": "int32" },
+          "offset": { "type": "integer", "format": "int64" },
+          "sort": { "$ref": "#/components/schemas/SortObject" },
           "paged": { "type": "boolean" },
           "unpaged": { "type": "boolean" }
         }
@@ -9345,8 +10399,8 @@
       "SortObject": {
         "type": "object",
         "properties": {
-          "empty": { "type": "boolean" },
           "sorted": { "type": "boolean" },
+          "empty": { "type": "boolean" },
           "unsorted": { "type": "boolean" }
         }
       },
@@ -9355,6 +10409,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9362,18 +10419,219 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
+      },
+      "PageWaMsgModelAccount": {
+        "type": "object",
+        "properties": {
+          "totalPages": { "type": "integer", "format": "int32" },
+          "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
+          "size": { "type": "integer", "format": "int32" },
+          "content": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/WaMsgModelAccount" }
+          },
+          "number": { "type": "integer", "format": "int32" },
+          "sort": { "$ref": "#/components/schemas/SortObject" },
+          "numberOfElements": { "type": "integer", "format": "int32" },
+          "empty": { "type": "boolean" }
+        }
+      },
+      "PageWaMsgListAccount": {
+        "type": "object",
+        "properties": {
+          "totalPages": { "type": "integer", "format": "int32" },
+          "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
+          "size": { "type": "integer", "format": "int32" },
+          "content": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/WaMsgListAccount" }
+          },
+          "number": { "type": "integer", "format": "int32" },
+          "sort": { "$ref": "#/components/schemas/SortObject" },
+          "numberOfElements": { "type": "integer", "format": "int32" },
+          "empty": { "type": "boolean" }
+        }
+      },
+      "PageWaMsgInteractiveAccount": {
+        "type": "object",
+        "properties": {
+          "totalPages": { "type": "integer", "format": "int32" },
+          "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
+          "size": { "type": "integer", "format": "int32" },
+          "content": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/WaMsgInteractiveAccount" }
+          },
+          "number": { "type": "integer", "format": "int32" },
+          "sort": { "$ref": "#/components/schemas/SortObject" },
+          "numberOfElements": { "type": "integer", "format": "int32" },
+          "empty": { "type": "boolean" }
+        }
+      },
+      "PageWaMsgButtonAccount": {
+        "type": "object",
+        "properties": {
+          "totalPages": { "type": "integer", "format": "int32" },
+          "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
+          "size": { "type": "integer", "format": "int32" },
+          "content": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/WaMsgButtonAccount" }
+          },
+          "number": { "type": "integer", "format": "int32" },
+          "sort": { "$ref": "#/components/schemas/SortObject" },
+          "numberOfElements": { "type": "integer", "format": "int32" },
+          "empty": { "type": "boolean" }
+        }
+      },
+      "PageWaMsgModel": {
+        "type": "object",
+        "properties": {
+          "totalPages": { "type": "integer", "format": "int32" },
+          "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
+          "size": { "type": "integer", "format": "int32" },
+          "content": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/WaMsgModel" }
+          },
+          "number": { "type": "integer", "format": "int32" },
+          "sort": { "$ref": "#/components/schemas/SortObject" },
+          "numberOfElements": { "type": "integer", "format": "int32" },
+          "empty": { "type": "boolean" }
+        }
+      },
+      "WaMsgModel": {
+        "required": [
+          "finality",
+          "language",
+          "modelId",
+          "name",
+          "situationType"
+        ],
+        "type": "object",
+        "properties": {
+          "waMsgModelId": { "type": "string", "format": "uuid" },
+          "modelId": { "maxLength": 255, "minLength": 0, "type": "string" },
+          "name": { "maxLength": 50, "minLength": 0, "type": "string" },
+          "language": { "maxLength": 50, "minLength": 0, "type": "string" },
+          "finality": {
+            "type": "string",
+            "enum": [
+              "ACCOUNT_CONFIRMATION",
+              "SCHEDULING_CONFIRMATION",
+              "STARTED_BY_USER"
+            ]
+          },
+          "situationType": {
+            "type": "string",
+            "enum": ["ACTIVE", "BLOCKED", "CANCELED"]
+          },
+          "waMsgMedia": { "type": "string", "format": "uuid" }
+        },
+        "description": "Model of whatsapp interactive messages"
+      },
+      "WaMsgList": {
+        "required": ["grouper", "title", "uniqueId"],
+        "type": "object",
+        "properties": {
+          "waMsgListId": { "type": "string", "format": "uuid" },
+          "grouper": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "uniqueId": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "title": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "description": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "waMsgInteractive": { "type": "string", "format": "uuid" },
+          "waMsgModel": { "type": "string", "format": "uuid" },
+          "buttonText": { "maxLength": 90, "minLength": 0, "type": "string" }
+        },
+        "description": "Base list, which will be used for sending messages in whatsapp"
+      },
+      "PageWaMsgInteractive": {
+        "type": "object",
+        "properties": {
+          "totalPages": { "type": "integer", "format": "int32" },
+          "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
+          "size": { "type": "integer", "format": "int32" },
+          "content": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/WaMsgInteractive" }
+          },
+          "number": { "type": "integer", "format": "int32" },
+          "sort": { "$ref": "#/components/schemas/SortObject" },
+          "numberOfElements": { "type": "integer", "format": "int32" },
+          "empty": { "type": "boolean" }
+        }
+      },
+      "WaMsgInteractive": {
+        "required": [
+          "defaultBody",
+          "interactiveType",
+          "queueName",
+          "situationType"
+        ],
+        "type": "object",
+        "properties": {
+          "waMsgInteractiveId": { "type": "string", "format": "uuid" },
+          "defaultTitle": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "defaultBody": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "defaultFooter": {
+            "maxLength": 90,
+            "minLength": 0,
+            "type": "string"
+          },
+          "interactiveType": {
+            "type": "string",
+            "enum": ["TEXT", "BUTTON", "LIST", "PRODUCT", "PRODUCT_LIST"]
+          },
+          "situationType": {
+            "type": "string",
+            "enum": ["ACTIVE", "CANCELLED"]
+          },
+          "queueName": { "maxLength": 255, "minLength": 0, "type": "string" }
+        },
+        "description": "Base interactive messages, which will be used for sending messages in whatsapp"
+      },
+      "WaMsgButton": {
+        "required": ["buttonType", "title", "uniqueId"],
+        "type": "object",
+        "properties": {
+          "waMsgButtonId": { "type": "string", "format": "uuid" },
+          "buttonType": { "type": "string", "enum": ["REPLY"] },
+          "uniqueId": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "title": { "maxLength": 90, "minLength": 0, "type": "string" },
+          "waMsgInteractive": { "type": "string", "format": "uuid" },
+          "waMsgModel": { "type": "string", "format": "uuid" }
+        },
+        "description": "Base buttons, which will be used for sending messages in whatsapp"
       },
       "PageWorkHourSchedException": {
         "type": "object",
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9381,9 +10639,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9393,6 +10648,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9400,9 +10658,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9425,6 +10680,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9432,9 +10690,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9444,6 +10699,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9451,9 +10709,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9463,6 +10718,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9470,9 +10728,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9482,6 +10737,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9489,9 +10747,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9546,6 +10801,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9553,9 +10811,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9565,6 +10820,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9572,9 +10830,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9584,6 +10839,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9591,9 +10849,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9618,6 +10873,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -9652,12 +10912,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -9732,6 +10987,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9739,9 +10997,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9751,6 +11006,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9758,9 +11016,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9770,6 +11025,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9777,9 +11035,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9789,6 +11044,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9796,9 +11054,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9817,6 +11072,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9824,9 +11082,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9836,6 +11091,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9843,9 +11101,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9855,6 +11110,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -9862,9 +11120,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -9916,6 +11171,11 @@
                           "items": {
                             "type": "object",
                             "properties": {
+                              "instant": {
+                                "type": "string",
+                                "format": "date-time"
+                              },
+                              "overlap": { "type": "boolean" },
                               "duration": {
                                 "type": "object",
                                 "properties": {
@@ -9952,12 +11212,7 @@
                               "dateTimeAfter": {
                                 "type": "string",
                                 "format": "date-time"
-                              },
-                              "instant": {
-                                "type": "string",
-                                "format": "date-time"
-                              },
-                              "overlap": { "type": "boolean" }
+                              }
                             }
                           }
                         },
@@ -10028,6 +11283,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -10037,9 +11295,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -10067,6 +11322,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -10101,12 +11361,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -10186,6 +11441,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -10220,12 +11480,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -10289,10 +11544,10 @@
             }
           },
           "clientId": { "type": "string" },
-          "eventId": { "type": "string" },
           "attendantId": { "type": "string" },
           "attendantName": { "type": "string" },
-          "clientName": { "type": "string" }
+          "clientName": { "type": "string" },
+          "eventId": { "type": "string" }
         }
       },
       "PageEstablishment": {
@@ -10300,6 +11555,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -10307,9 +11565,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -10336,6 +11591,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -10370,12 +11630,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -10455,6 +11710,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -10489,12 +11749,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -10574,6 +11829,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -10608,12 +11868,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -10693,6 +11948,11 @@
                         "items": {
                           "type": "object",
                           "properties": {
+                            "instant": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "overlap": { "type": "boolean" },
                             "duration": {
                               "type": "object",
                               "properties": {
@@ -10727,12 +11987,7 @@
                             "dateTimeAfter": {
                               "type": "string",
                               "format": "date-time"
-                            },
-                            "instant": {
-                              "type": "string",
-                              "format": "date-time"
-                            },
-                            "overlap": { "type": "boolean" }
+                            }
                           }
                         }
                       },
@@ -10803,6 +12058,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -10810,9 +12068,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
@@ -10822,6 +12077,9 @@
         "properties": {
           "totalPages": { "type": "integer", "format": "int32" },
           "totalElements": { "type": "integer", "format": "int64" },
+          "pageable": { "$ref": "#/components/schemas/PageableObject" },
+          "first": { "type": "boolean" },
+          "last": { "type": "boolean" },
           "size": { "type": "integer", "format": "int32" },
           "content": {
             "type": "array",
@@ -10829,9 +12087,6 @@
           },
           "number": { "type": "integer", "format": "int32" },
           "sort": { "$ref": "#/components/schemas/SortObject" },
-          "pageable": { "$ref": "#/components/schemas/PageableObject" },
-          "first": { "type": "boolean" },
-          "last": { "type": "boolean" },
           "numberOfElements": { "type": "integer", "format": "int32" },
           "empty": { "type": "boolean" }
         }
